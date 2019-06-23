@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btn_item = new DevExpress.XtraBars.BarButtonItem();
@@ -58,6 +59,7 @@
             this.chk_team1 = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.month_pick = new DevExpress.XtraEditors.Controls.CalendarControl();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -89,7 +91,7 @@
             this.ribbonPage1,
             this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1087, 148);
+            this.ribbonControl1.Size = new System.Drawing.Size(1095, 148);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btn_item
@@ -179,7 +181,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 828);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1087, 21);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1095, 21);
             // 
             // ribbonPage2
             // 
@@ -348,12 +350,16 @@
             this.month_pick.Size = new System.Drawing.Size(232, 227);
             this.month_pick.TabIndex = 0;
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Dark";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1087, 849);
+            this.ClientSize = new System.Drawing.Size(1095, 849);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.grid_sales);
             this.Controls.Add(this.ribbonStatusBar1);
@@ -415,5 +421,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraGrid.Columns.GridColumn field_itemd3;
         private DevExpress.XtraGrid.Columns.GridColumn field_item4;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
