@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.grid_items = new System.Windows.Forms.DataGridView();
-            this.field_item_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_item_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_item_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_item_weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_item_save = new System.Windows.Forms.Button();
             this.btn_item_del = new System.Windows.Forms.Button();
@@ -45,42 +41,17 @@
             // grid_items
             // 
             this.grid_items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_items.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.field_item_ID,
-            this.field_item_name,
-            this.field_item_type,
-            this.field_item_weight});
-            this.grid_items.Location = new System.Drawing.Point(12, 101);
+            this.grid_items.Location = new System.Drawing.Point(4, 101);
             this.grid_items.Name = "grid_items";
-            this.grid_items.Size = new System.Drawing.Size(1087, 422);
+            this.grid_items.Size = new System.Drawing.Size(734, 422);
             this.grid_items.TabIndex = 0;
-            // 
-            // field_item_ID
-            // 
-            this.field_item_ID.HeaderText = "ID";
-            this.field_item_ID.Name = "field_item_ID";
-            // 
-            // field_item_name
-            // 
-            this.field_item_name.HeaderText = "Name";
-            this.field_item_name.Name = "field_item_name";
-            // 
-            // field_item_type
-            // 
-            this.field_item_type.HeaderText = "Type";
-            this.field_item_type.Name = "field_item_type";
-            // 
-            // field_item_weight
-            // 
-            this.field_item_weight.HeaderText = "Weight";
-            this.field_item_weight.Name = "field_item_weight";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_item_save);
             this.groupBox1.Controls.Add(this.btn_item_del);
             this.groupBox1.Controls.Add(this.btn_item_add);
-            this.groupBox1.Location = new System.Drawing.Point(256, 32);
+            this.groupBox1.Location = new System.Drawing.Point(538, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 63);
             this.groupBox1.TabIndex = 1;
@@ -120,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(74, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.TabIndex = 3;
@@ -130,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 535);
+            this.ClientSize = new System.Drawing.Size(740, 525);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid_items);
@@ -150,10 +121,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grid_items;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_item_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_item_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_item_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_item_weight;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_item_save;
         private System.Windows.Forms.Button btn_item_del;

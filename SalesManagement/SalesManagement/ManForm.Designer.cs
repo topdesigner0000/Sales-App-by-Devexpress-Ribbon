@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grid_employees = new System.Windows.Forms.DataGridView();
-            this.field_man_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_man_Fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_man_Gname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_man_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_man_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.field_man_team = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_man_save = new System.Windows.Forms.Button();
             this.btn_man_delete = new System.Windows.Forms.Button();
@@ -49,55 +43,17 @@
             // grid_employees
             // 
             this.grid_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.field_man_ID,
-            this.field_man_Fname,
-            this.field_man_Gname,
-            this.field_man_email,
-            this.field_man_time,
-            this.field_man_team});
-            this.grid_employees.Location = new System.Drawing.Point(12, 121);
+            this.grid_employees.Location = new System.Drawing.Point(3, 87);
             this.grid_employees.Name = "grid_employees";
-            this.grid_employees.Size = new System.Drawing.Size(593, 466);
+            this.grid_employees.Size = new System.Drawing.Size(734, 466);
             this.grid_employees.TabIndex = 0;
-            // 
-            // field_man_ID
-            // 
-            this.field_man_ID.HeaderText = "ID";
-            this.field_man_ID.Name = "field_man_ID";
-            this.field_man_ID.Width = 50;
-            // 
-            // field_man_Fname
-            // 
-            this.field_man_Fname.HeaderText = "Family Name";
-            this.field_man_Fname.Name = "field_man_Fname";
-            // 
-            // field_man_Gname
-            // 
-            this.field_man_Gname.HeaderText = "Given Name";
-            this.field_man_Gname.Name = "field_man_Gname";
-            // 
-            // field_man_email
-            // 
-            this.field_man_email.HeaderText = "E-mail";
-            this.field_man_email.Name = "field_man_email";
-            // 
-            // field_man_time
-            // 
-            this.field_man_time.HeaderText = "Time";
-            this.field_man_time.Name = "field_man_time";
-            // 
-            // field_man_team
-            // 
-            this.field_man_team.HeaderText = "Team";
-            this.field_man_team.Name = "field_man_team";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_man_save);
             this.groupBox1.Controls.Add(this.btn_man_delete);
             this.groupBox1.Controls.Add(this.btn_man_add);
-            this.groupBox1.Location = new System.Drawing.Point(421, 67);
+            this.groupBox1.Location = new System.Drawing.Point(555, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(182, 48);
             this.groupBox1.TabIndex = 1;
@@ -136,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(56, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 32);
             this.label1.TabIndex = 2;
@@ -150,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 592);
+            this.ClientSize = new System.Drawing.Size(739, 555);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid_employees);
@@ -170,12 +126,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grid_employees;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_man_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_man_Fname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_man_Gname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_man_email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_man_time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn field_man_team;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_man_save;
         private System.Windows.Forms.Button btn_man_delete;

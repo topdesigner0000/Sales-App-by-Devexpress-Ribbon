@@ -31,13 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
             this.btn_item = new DevExpress.XtraBars.BarButtonItem();
             this.btn_man = new DevExpress.XtraBars.BarButtonItem();
             this.btn_item_chart = new DevExpress.XtraBars.BarButtonItem();
             this.btn_man_chart = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,8 +63,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.month_pick = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -94,7 +95,8 @@
             this.ribbonPage1,
             this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1095, 148);
+            this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.Size = new System.Drawing.Size(1598, 148);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btn_item
@@ -137,6 +139,16 @@
             this.btn_man_chart.Name = "btn_man_chart";
             this.btn_man_chart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_man_chart_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "SalesAmount";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,6 +172,12 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Man Management";
             // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Amount";
+            // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -182,10 +200,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 828);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 878);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1095, 21);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1598, 21);
             // 
             // ribbonPage2
             // 
@@ -194,11 +212,11 @@
             // 
             // grid_sales
             // 
-            this.grid_sales.Location = new System.Drawing.Point(234, 146);
+            this.grid_sales.Location = new System.Drawing.Point(233, 147);
             this.grid_sales.MainView = this.gridView1;
             this.grid_sales.MenuManager = this.ribbonControl1;
             this.grid_sales.Name = "grid_sales";
-            this.grid_sales.Size = new System.Drawing.Size(853, 668);
+            this.grid_sales.Size = new System.Drawing.Size(1378, 725);
             this.grid_sales.TabIndex = 2;
             this.grid_sales.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -216,6 +234,7 @@
             this.field_item4});
             this.gridView1.GridControl = this.grid_sales;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // field_ID
             // 
@@ -270,9 +289,10 @@
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.month_pick);
-            this.groupControl1.Location = new System.Drawing.Point(0, 146);
+            this.groupControl1.Location = new System.Drawing.Point(0, 148);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(233, 668);
+            this.groupControl1.ShowCaption = false;
+            this.groupControl1.Size = new System.Drawing.Size(233, 724);
             this.groupControl1.TabIndex = 3;
             // 
             // groupControl2
@@ -339,7 +359,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(31, 35);
+            this.labelControl1.Location = new System.Drawing.Point(31, 16);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(44, 24);
             this.labelControl1.TabIndex = 1;
@@ -349,7 +369,7 @@
             // 
             this.month_pick.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.month_pick.Location = new System.Drawing.Point(0, 441);
+            this.month_pick.Location = new System.Drawing.Point(1, 496);
             this.month_pick.Name = "month_pick";
             this.month_pick.Size = new System.Drawing.Size(232, 227);
             this.month_pick.TabIndex = 0;
@@ -358,28 +378,12 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Dark";
             // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Amount";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "SalesAmount";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1095, 849);
+            this.ClientSize = new System.Drawing.Size(1598, 899);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.grid_sales);
             this.Controls.Add(this.ribbonStatusBar1);
