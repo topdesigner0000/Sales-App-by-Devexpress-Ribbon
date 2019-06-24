@@ -28,6 +28,21 @@ namespace SalesManagement.db
         private int _team;
         private bool _invisible;
 
+        public Employee()
+        {
+
+        }
+
+        public Employee(string first_name, string given_name, string email, int code, int team)
+        {
+            this.f_name = first_name;
+            this.g_name = given_name;
+            this.email = email;
+            this.code = code;
+            this.team = team;
+            this.invisible = true;
+        }
+
         public int id { get { return _id; } set { _id = value; } }
         public string f_name { get { return _f_name; } set { _f_name = value; } }
         public string g_name { get { return _g_name; } set { _g_name = value; } }
@@ -42,7 +57,7 @@ namespace SalesManagement.db
     {
         string m_tableName = "tbl_employee";
 
-        ModelEmployee()
+        public ModelEmployee()
         {
         }
 
@@ -50,10 +65,10 @@ namespace SalesManagement.db
         {
         }
 
-        bool AddProduct(IEmployee newEmployee)
+        public bool AddItem(IEmployee newEmployee)
         {
             bool w_ret = false;
-            string w_query = string.Format(@"INSERT INTO {0} (f_name, g_name, email, code, team, invisible) VALUES ({1}, {2}, {3}, {4}, {5}, {6})"
+            string w_query = string.Format(@"INSERT INTO {0} (f_name, g_name, email, code, team, invisible) VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}')"
                                         , m_tableName
                                         , newEmployee.f_name
                                         , newEmployee.g_name
@@ -67,10 +82,10 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        bool UpdateProduct(IEmployee udEmployee)
+        public bool UpdateItem(IEmployee udEmployee)
         {
             bool w_ret = false;
-            string w_query = string.Format(@"UPDATE {0} SET f_name={1}, g_name={2}, email={3}, code={4}, team={5}, invisible={6} WHERE id={7};"
+            string w_query = string.Format(@"UPDATE {0} SET f_name='{1}', g_name='{2}', email='{3}', code='{4}', team='{5}', invisible='{6}' WHERE id='{7}';"
                                         , m_tableName
                                         , udEmployee.f_name
                                         , udEmployee.g_name
@@ -85,11 +100,11 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        bool DeleteProdcut(IEmployee delEmployee)
+        public bool DeleteItem(IEmployee delEmployee)
         {
             bool w_ret = false;
 
-            string w_query = string.Format(@"DELETE FROM {0} WHERE id={1};"
+            string w_query = string.Format(@"DELETE FROM {0} WHERE id='{1}';"
                             , m_tableName
                             , delEmployee.id
                         );
@@ -99,7 +114,7 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        IList<IEmployee> GetProducts()
+        public IList<IEmployee> GetItemList()
         {
             IList<IEmployee> w_list = new List<IEmployee>();
 
@@ -126,7 +141,7 @@ namespace SalesManagement.db
                     //. 06 - team
                     w_item.team = w_reader.GetInt32(5);
                     //. 07 - invisible
-                    w_item.invisible = w_reader.GetBoolean(6);
+                    w_item.invisible = bool.Parse(w_reader.GetString(6));   //x w_reader.GetBoolean(6);
 
                     w_list.Add(w_item);
                 }

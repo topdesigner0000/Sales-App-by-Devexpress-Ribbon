@@ -20,6 +20,17 @@ namespace SalesManagement.db
         private string _name;
         private string _desc;
 
+        public Team()
+        {
+
+        }
+
+        public Team(string name, string desc)
+        {
+            this.name = name;
+            this.desc = desc;
+        }
+
         public int id { get { return _id; } set { _id = value; } }
         public string name { get { return _name; } set { _name = value; } }
         public string desc { get { return _desc; } set { _desc = value; } }
@@ -30,7 +41,7 @@ namespace SalesManagement.db
     {
         string m_tableName = "tbl_team";
 
-        ModelTeam()
+        public ModelTeam()
         {
         }
 
@@ -38,10 +49,10 @@ namespace SalesManagement.db
         {
         }
 
-        bool AddProduct(ITeam newTeam)
+        public bool AddItem(ITeam newTeam)
         {
             bool w_ret = false;
-            string w_query = string.Format(@"INSERT INTO {0} (name, desc) VALUES ({1}, {2})"
+            string w_query = string.Format(@"INSERT INTO {0} (name, desc) VALUES ('{1}', '{2}')"
                                         , m_tableName
                                         , newTeam.name
                                         , newTeam.desc
@@ -51,10 +62,10 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        bool UpdateProduct(ITeam udTeam)
+        public bool UpdateItem(ITeam udTeam)
         {
             bool w_ret = false;
-            string w_query = string.Format(@"UPDATE {0} SET name={1}, desc={2};"
+            string w_query = string.Format(@"UPDATE {0} SET name='{1}', desc='{2}';"
                                         , m_tableName
                                         , udTeam.name
                                         , udTeam.desc
@@ -64,11 +75,11 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        bool DeleteProdcut(ITeam delTeam)
+        public bool DeleteItem(ITeam delTeam)
         {
             bool w_ret = false;
 
-            string w_query = string.Format(@"DELETE FROM {0} WHERE id={1};"
+            string w_query = string.Format(@"DELETE FROM {0} WHERE id='{1}';"
                             , m_tableName
                             , delTeam.id
                         );
@@ -78,7 +89,7 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        IList<ITeam> GetProducts()
+        public IList<ITeam> GetItemList()
         {
             IList<ITeam> w_list = new List<ITeam>();
 

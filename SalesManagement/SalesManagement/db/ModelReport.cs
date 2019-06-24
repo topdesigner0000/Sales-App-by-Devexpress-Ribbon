@@ -28,6 +28,21 @@ namespace SalesManagement.db
         private int _product;
         private int _amount;
 
+        public Report()
+        {
+
+        }
+
+        public Report(int year, int month, int day, int employee, int product, int amount)
+        {
+            this.year = year;
+            this.month= month;
+            this.day = day;
+            this.employee = employee;
+            this.product = product;
+            this.amount = amount;
+        }
+
         public int id { get { return _id; } set { _id = value; } }
         public int year { get { return _year; } set { _year = value; } }
         public int month { get { return _month; } set { _month = value; } }
@@ -42,7 +57,7 @@ namespace SalesManagement.db
     {
         string m_tableName = "tbl_Report";
 
-        ModelReport()
+        public ModelReport()
         {
         }
 
@@ -50,10 +65,10 @@ namespace SalesManagement.db
         {
         }
 
-        bool AddReport(IReport newItem)
+        public bool AddItem(IReport newItem)
         {
             bool w_ret = false;
-            string w_query = string.Format(@"INSERT INTO {0} (year, month, day, employee, product, amount) VALUES ({1}, {2}, {3}, {4}, {5}, {6})"
+            string w_query = string.Format(@"INSERT INTO {0} (year, month, day, employee, product, amount) VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}')"
                                         , m_tableName
                                         , newItem.year
                                         , newItem.month
@@ -67,10 +82,10 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        bool UpdateReport(IReport udReport)
+        public bool UpdateItem(IReport udReport)
         {
             bool w_ret = false;
-            string w_query = string.Format(@"UPDATE {0} SET year={1}, month={2}, day={3}, employee={4}, product={5}, amount={6} WHERE id={6};"
+            string w_query = string.Format(@"UPDATE {0} SET year='{1}', month='{2}', day='{3}', employee='{4}', product='{5}', amount='{6}' WHERE id='{7}';"
                                         , m_tableName
                                         , udReport.year
                                         , udReport.month
@@ -85,11 +100,11 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        bool DeleteProdcut(IReport delReport)
+        public bool DeleteItem(IReport delReport)
         {
             bool w_ret = false;
 
-            string w_query = string.Format(@"DELETE FROM {0} WHERE id={1};"
+            string w_query = string.Format(@"DELETE FROM {0} WHERE id='{1}';"
                             , m_tableName
                             , delReport.id
                         );
@@ -99,7 +114,7 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        IList<IReport> GetReports()
+        public IList<IReport> GetItemList()
         {
             IList<IReport> w_list = new List<IReport>();
 

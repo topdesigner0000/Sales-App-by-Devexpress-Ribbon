@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grid_employees = new System.Windows.Forms.DataGridView();
             this.field_man_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.field_man_Fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.field_man_Gname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,24 +42,24 @@
             this.btn_man_add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_employees)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // grid_employees
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grid_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.field_man_ID,
             this.field_man_Fname,
             this.field_man_Gname,
             this.field_man_email,
             this.field_man_time,
             this.field_man_team});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 121);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(593, 466);
-            this.dataGridView1.TabIndex = 0;
+            this.grid_employees.Location = new System.Drawing.Point(12, 121);
+            this.grid_employees.Name = "grid_employees";
+            this.grid_employees.Size = new System.Drawing.Size(593, 466);
+            this.grid_employees.TabIndex = 0;
             // 
             // field_man_ID
             // 
@@ -130,6 +130,7 @@
             this.btn_man_add.TabIndex = 0;
             this.btn_man_add.Text = "Add";
             this.btn_man_add.UseVisualStyleBackColor = true;
+            this.btn_man_add.Click += new System.EventHandler(this.btn_man_add_Click);
             // 
             // label1
             // 
@@ -152,13 +153,14 @@
             this.ClientSize = new System.Drawing.Size(615, 592);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grid_employees);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManForm";
             this.Text = "SalesMan Management";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ManForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_employees)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,7 +169,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid_employees;
         private System.Windows.Forms.DataGridViewTextBoxColumn field_man_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn field_man_Fname;
         private System.Windows.Forms.DataGridViewTextBoxColumn field_man_Gname;

@@ -52,7 +52,7 @@
             this.field_item_weight});
             this.grid_items.Location = new System.Drawing.Point(12, 101);
             this.grid_items.Name = "grid_items";
-            this.grid_items.Size = new System.Drawing.Size(444, 422);
+            this.grid_items.Size = new System.Drawing.Size(1087, 422);
             this.grid_items.TabIndex = 0;
             // 
             // field_item_ID
@@ -104,6 +104,7 @@
             this.btn_item_del.TabIndex = 1;
             this.btn_item_del.Text = "Delete";
             this.btn_item_del.UseVisualStyleBackColor = true;
+            this.btn_item_del.Click += new System.EventHandler(this.btn_item_del_Click);
             // 
             // btn_item_add
             // 
@@ -113,6 +114,7 @@
             this.btn_item_add.TabIndex = 0;
             this.btn_item_add.Text = "Add";
             this.btn_item_add.UseVisualStyleBackColor = true;
+            this.btn_item_add.Click += new System.EventHandler(this.btn_item_add_Click);
             // 
             // label1
             // 
@@ -128,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 535);
+            this.ClientSize = new System.Drawing.Size(1111, 535);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid_items);
@@ -137,6 +139,7 @@
             this.MinimizeBox = false;
             this.Name = "ItemForm";
             this.Text = "Products Management";
+            this.Load += new System.EventHandler(this.ItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_items)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
