@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.field_man_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.field_man_Fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +41,7 @@
             this.btn_man_delete = new System.Windows.Forms.Button();
             this.btn_man_add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +141,10 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "SalesMen";
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Dark";
+            // 
             // ManForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,5 +179,6 @@
         private System.Windows.Forms.Button btn_man_delete;
         private System.Windows.Forms.Button btn_man_add;
         private System.Windows.Forms.Label label1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

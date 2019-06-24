@@ -53,13 +53,13 @@
             this.field_item4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.chk_team4 = new DevExpress.XtraEditors.CheckEdit();
-            this.chk_team3 = new DevExpress.XtraEditors.CheckEdit();
-            this.chk_team2 = new DevExpress.XtraEditors.CheckEdit();
-            this.chk_team1 = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.chk_term4 = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_term3 = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_term2 = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_term1 = new DevExpress.XtraEditors.CheckEdit();
             this.month_pick = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -67,10 +67,10 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.month_pick.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,69 +277,59 @@
             this.groupControl2.Appearance.Options.UseFont = true;
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.Controls.Add(this.chk_team4);
-            this.groupControl2.Controls.Add(this.chk_team3);
-            this.groupControl2.Controls.Add(this.chk_team2);
-            this.groupControl2.Controls.Add(this.chk_team1);
+            this.groupControl2.Controls.Add(this.chk_term4);
+            this.groupControl2.Controls.Add(this.chk_term3);
+            this.groupControl2.Controls.Add(this.chk_term2);
+            this.groupControl2.Controls.Add(this.chk_term1);
             this.groupControl2.Location = new System.Drawing.Point(28, 79);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(200, 300);
             this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "Team";
+            this.groupControl2.Text = "Term";
             // 
-            // chk_team4
+            // chk_term4
             // 
-            this.chk_team4.Location = new System.Drawing.Point(47, 197);
-            this.chk_team4.MenuManager = this.ribbonControl1;
-            this.chk_team4.Name = "chk_team4";
-            this.chk_team4.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_team4.Properties.Appearance.Options.UseFont = true;
-            this.chk_team4.Properties.Caption = "Team4";
-            this.chk_team4.Size = new System.Drawing.Size(75, 23);
-            this.chk_team4.TabIndex = 3;
+            this.chk_term4.Location = new System.Drawing.Point(47, 197);
+            this.chk_term4.MenuManager = this.ribbonControl1;
+            this.chk_term4.Name = "chk_term4";
+            this.chk_term4.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_term4.Properties.Appearance.Options.UseFont = true;
+            this.chk_term4.Properties.Caption = "Term4";
+            this.chk_term4.Size = new System.Drawing.Size(75, 23);
+            this.chk_term4.TabIndex = 3;
             // 
-            // chk_team3
+            // chk_term3
             // 
-            this.chk_team3.Location = new System.Drawing.Point(47, 149);
-            this.chk_team3.MenuManager = this.ribbonControl1;
-            this.chk_team3.Name = "chk_team3";
-            this.chk_team3.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_team3.Properties.Appearance.Options.UseFont = true;
-            this.chk_team3.Properties.Caption = "Team3";
-            this.chk_team3.Size = new System.Drawing.Size(75, 23);
-            this.chk_team3.TabIndex = 2;
+            this.chk_term3.Location = new System.Drawing.Point(47, 149);
+            this.chk_term3.MenuManager = this.ribbonControl1;
+            this.chk_term3.Name = "chk_term3";
+            this.chk_term3.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_term3.Properties.Appearance.Options.UseFont = true;
+            this.chk_term3.Properties.Caption = "Term3";
+            this.chk_term3.Size = new System.Drawing.Size(75, 23);
+            this.chk_term3.TabIndex = 2;
             // 
-            // chk_team2
+            // chk_term2
             // 
-            this.chk_team2.Location = new System.Drawing.Point(47, 100);
-            this.chk_team2.MenuManager = this.ribbonControl1;
-            this.chk_team2.Name = "chk_team2";
-            this.chk_team2.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_team2.Properties.Appearance.Options.UseFont = true;
-            this.chk_team2.Properties.Caption = "Team2";
-            this.chk_team2.Size = new System.Drawing.Size(75, 23);
-            this.chk_team2.TabIndex = 1;
+            this.chk_term2.Location = new System.Drawing.Point(47, 100);
+            this.chk_term2.MenuManager = this.ribbonControl1;
+            this.chk_term2.Name = "chk_term2";
+            this.chk_term2.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_term2.Properties.Appearance.Options.UseFont = true;
+            this.chk_term2.Properties.Caption = "Term2";
+            this.chk_term2.Size = new System.Drawing.Size(75, 23);
+            this.chk_term2.TabIndex = 1;
             // 
-            // chk_team1
+            // chk_term1
             // 
-            this.chk_team1.Location = new System.Drawing.Point(47, 57);
-            this.chk_team1.MenuManager = this.ribbonControl1;
-            this.chk_team1.Name = "chk_team1";
-            this.chk_team1.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_team1.Properties.Appearance.Options.UseFont = true;
-            this.chk_team1.Properties.Caption = "Team1";
-            this.chk_team1.Size = new System.Drawing.Size(75, 23);
-            this.chk_team1.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(31, 35);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(44, 24);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "2018";
+            this.chk_term1.Location = new System.Drawing.Point(47, 57);
+            this.chk_term1.MenuManager = this.ribbonControl1;
+            this.chk_term1.Name = "chk_term1";
+            this.chk_term1.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_term1.Properties.Appearance.Options.UseFont = true;
+            this.chk_term1.Properties.Caption = "Term1";
+            this.chk_term1.Size = new System.Drawing.Size(75, 23);
+            this.chk_term1.TabIndex = 0;
             // 
             // month_pick
             // 
@@ -353,6 +343,16 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Dark";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(31, 35);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(44, 24);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "2018";
             // 
             // MainForm
             // 
@@ -380,10 +380,10 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_team1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.month_pick.CalendarTimeProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -403,13 +403,12 @@
         private DevExpress.XtraGrid.GridControl grid_sales;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.Controls.CalendarControl month_pick;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.CheckEdit chk_team4;
-        private DevExpress.XtraEditors.CheckEdit chk_team3;
-        private DevExpress.XtraEditors.CheckEdit chk_team2;
-        private DevExpress.XtraEditors.CheckEdit chk_team1;
+        private DevExpress.XtraEditors.CheckEdit chk_term4;
+        private DevExpress.XtraEditors.CheckEdit chk_term3;
+        private DevExpress.XtraEditors.CheckEdit chk_term2;
+        private DevExpress.XtraEditors.CheckEdit chk_term1;
         private DevExpress.XtraGrid.Columns.GridColumn field_ID;
         private DevExpress.XtraGrid.Columns.GridColumn field_name;
         private DevExpress.XtraGrid.Columns.GridColumn field_item1;
@@ -422,5 +421,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn field_itemd3;
         private DevExpress.XtraGrid.Columns.GridColumn field_item4;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
