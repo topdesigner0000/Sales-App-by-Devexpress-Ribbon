@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Columns;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,5 +42,7 @@ namespace SalesManagement
             ManChartForm chart_man = new ManChartForm();
             chart_man.ShowDialog();
         }
+
+        
     }
 }
