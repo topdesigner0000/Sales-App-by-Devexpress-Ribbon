@@ -78,6 +78,7 @@
             this.btn_amount_save.Size = new System.Drawing.Size(75, 23);
             this.btn_amount_save.TabIndex = 3;
             this.btn_amount_save.Text = "Save";
+            this.btn_amount_save.Click += new System.EventHandler(this.btn_amount_save_Click);
             // 
             // label1
             // 

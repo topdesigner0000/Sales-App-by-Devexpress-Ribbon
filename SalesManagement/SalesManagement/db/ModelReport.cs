@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Data;
 
 namespace SalesManagement.db
 {
@@ -114,12 +115,30 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-        public IList<IReport> GetItemList()
+        public bool DeleteAll(int year, int month)
+        {
+            bool w_ret = false;
+
+            string w_query = string.Format(@"DELETE FROM {0} WHERE year='{1}' AND month='{2}';"
+                            , m_tableName
+                            , year
+                            , month
+                        );
+
+            w_ret = DbAssist.executeCommand(w_query);
+
+            return w_ret;
+        }
+
+
+        protected IList<IReport> GetItemList(int year, int mounth)
         {
             IList<IReport> w_list = new List<IReport>();
 
-            string w_query = string.Format(@"SELECT * FROM {0};"
+            string w_query = string.Format(@"SELECT * FROM {0} WHERE year='{1}' AND month = '{2}';"
                 , m_tableName
+                , year
+                , mounth
             );
 
             SQLiteDataReader w_reader = DbAssist.executeQuery(w_query);
@@ -148,6 +167,104 @@ namespace SalesManagement.db
             }
 
             return w_list;
+        }
+
+        protected int GetSalesCount(IList<IReport> sales_info, int employee_id, int product_id)
+        {
+            int w_count = 0;
+            
+            foreach (IReport w_item in sales_info)
+            {
+                if (w_item.employee == employee_id && w_item.product == product_id)
+                {
+                    w_count = w_item.amount;
+                }
+            }
+            return w_count;
+        }
+
+        public DataTable GetReport(int year, int month)
+        {
+            DataTable w_table = new DataTable();
+
+            //. Columns
+            ModelProduct w_products = new ModelProduct();
+            IList<IProduct> w_prdList = w_products.GetItemList();
+
+            DataColumn w_col = w_table.Columns.Add("id", typeof(Int32));
+            w_col.AllowDBNull = false;
+            w_col.Unique = true;
+
+            w_col = w_table.Columns.Add("Employee", typeof(string));
+            w_col.AllowDBNull = false;
+            w_col.Unique = true;
+            foreach (IProduct w_prdItem in w_prdList)
+            {
+                w_col = w_table.Columns.Add(w_prdItem.id.ToString(), typeof(Int32));
+                w_col.Caption = w_prdItem.name;
+            }
+
+            //. Rows.
+            ModelEmployee w_employees = new ModelEmployee();
+            IList<IEmployee> w_manList = w_employees.GetItemList();
+            IList<IReport> w_salesList = this.GetItemList(year, month);
+
+            foreach (IEmployee w_empItem in w_manList)
+            {
+                DataRow w_row = w_table.NewRow();
+                foreach (DataColumn w_col1 in w_table.Columns)
+                {
+                    if (w_col1.Ordinal == 0)
+                    {
+                        w_row[0] = w_empItem.id;
+                        continue;
+                    }
+
+                    if (w_col1.Ordinal == 1)
+                    {
+                        w_row[1] = w_empItem.f_name + "." + w_empItem.g_name;
+                        continue;
+                    }
+
+                    int w_prdId = int.Parse(w_col1.ColumnName);
+                    int w_amount = GetSalesCount(w_salesList, w_empItem.id, w_prdId);
+                    w_row[w_col1.Ordinal] = w_amount;
+                }
+
+                w_table.Rows.Add(w_row);
+            }
+
+            return w_table;
+        }
+
+        public bool SetReport(int year, int month, DataTable salse_info)
+        {
+            if (salse_info == null)
+                return false;
+
+            if (!this.DeleteAll(year, month))
+                return false;
+
+            int w_col_num = salse_info.Columns.Count;
+            foreach (DataRow w_row in salse_info.Rows)
+            {
+                int w_emp_id = (int)w_row[0];
+                for (int i = 2; i < w_col_num; i++)
+                {
+                    if (w_row[i] == System.DBNull.Value)
+                        continue;
+                    int w_prd_id = int.Parse(salse_info.Columns[i].ColumnName);
+                    int w_amount = (int)w_row[i];
+
+                    if (w_amount != 0)
+                    {
+                        Report w_report = new Report(year, month, 1, w_emp_id, w_prd_id, w_amount);
+                        this.AddItem(w_report);
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

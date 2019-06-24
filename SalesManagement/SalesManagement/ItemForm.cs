@@ -34,12 +34,12 @@ namespace SalesManagement
             //x grid_items.Rows.Add();
 
             //*
-            m_model.AddItem(new Product("Computer", 1, 100, 120));
-            m_model.AddItem(new Product("hdd", 0, 50, 55));
-            m_model.AddItem(new Product("ram", 0, 80, 100));
-            m_model.AddItem(new Product("mouse", 0, 10, 12.5f));
-            m_model.AddItem(new Product("keyboard", 0, 10, 12.5f));
-            m_model.AddItem(new Product("webcam", 0, 23, 32.5f));
+            m_model.AddItem(new Product("Sugar", 1, 100, 120));
+            m_model.AddItem(new Product("Bisket", 0, 50, 55));
+            m_model.AddItem(new Product("Brade", 0, 80, 100));
+            m_model.AddItem(new Product("Juce", 0, 10, 12.5f));
+            m_model.AddItem(new Product("Jerry", 0, 10, 12.5f));
+            m_model.AddItem(new Product("Kimchi", 0, 23, 32.5f));
             //*/
         }
 

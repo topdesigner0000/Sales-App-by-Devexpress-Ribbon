@@ -84,12 +84,12 @@ namespace SalesManagement
                 m_dbError = 0;
                 SQLiteCommand w_command = new SQLiteCommand(commandQuery, m_dbConnection);
                 int w_rows = w_command.ExecuteNonQuery();
+                w_ret = true;
             }
             catch (SQLiteException ex)
             {
                 m_dbError = ex.ErrorCode;
                 Console.WriteLine("Error in connectToDB : {0}", ex.Message);
-                m_dbConnection = null;
                 w_ret = false;
             }
             return w_ret;
@@ -112,7 +112,6 @@ namespace SalesManagement
             {
                 m_dbError = ex.ErrorCode;
                 Console.WriteLine("Error in connectToDB : {0}", ex.Message);
-                m_dbConnection = null;
                 w_reader = null;
             }
             return w_reader;
