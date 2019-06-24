@@ -41,5 +41,11 @@ namespace SalesManagement
             ManChartForm chart_man = new ManChartForm();
             chart_man.ShowDialog();
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SalesAmountForm amount_form = new SalesAmountForm();
+            amount_form.ShowDialog();
+        }
     }
 }
