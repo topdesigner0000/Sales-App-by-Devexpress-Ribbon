@@ -15,7 +15,7 @@ namespace SalesManagement.db
         string email { get; set; }
         int code { get; set; }
         int team { get; set; }
-        bool invisible { get; set; }
+        int invisible { get; set; }
     }
 
     class Employee : IEmployee
@@ -26,7 +26,7 @@ namespace SalesManagement.db
         private string _email;
         private int _code;
         private int _team;
-        private bool _invisible;
+        private int _invisible;
 
         public Employee()
         {
@@ -40,7 +40,7 @@ namespace SalesManagement.db
             this.email = email;
             this.code = code;
             this.team = team;
-            this.invisible = true;
+            this.invisible = 1;
         }
 
         public int id { get { return _id; } set { _id = value; } }
@@ -49,7 +49,7 @@ namespace SalesManagement.db
         public string email { get { return _email; } set { _email = value; } }
         public int code { get { return _code; } set { _code = value; } }
         public int team { get { return _team; } set { _team = value; } }
-        public bool invisible { get { return _invisible; } set { _invisible = value; } }
+        public int invisible { get { return _invisible; } set { _invisible = value; } }
     }
 
 
@@ -141,13 +141,22 @@ namespace SalesManagement.db
                     //. 06 - team
                     w_item.team = w_reader.GetInt32(5);
                     //. 07 - invisible
-                    w_item.invisible = bool.Parse(w_reader.GetString(6));   //x w_reader.GetBoolean(6);
+                    w_item.invisible = w_reader.GetInt32(6);   //x w_reader.GetBoolean(6);
 
                     w_list.Add(w_item);
                 }
             }
 
             return w_list;
+        }
+        public bool DeleteAll()
+        {
+            string w_query = string.Format(@"DELETE FROM {0};"
+                            , m_tableName
+                        );
+
+            bool w_ret = DbAssist.executeCommand(w_query);
+            return w_ret;
         }
     }
 }

@@ -43,7 +43,7 @@
             this.grid_items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_items.Location = new System.Drawing.Point(4, 101);
             this.grid_items.Name = "grid_items";
-            this.grid_items.Size = new System.Drawing.Size(734, 422);
+            this.grid_items.Size = new System.Drawing.Size(533, 422);
             this.grid_items.TabIndex = 0;
             // 
             // groupBox1
@@ -51,7 +51,7 @@
             this.groupBox1.Controls.Add(this.btn_item_save);
             this.groupBox1.Controls.Add(this.btn_item_del);
             this.groupBox1.Controls.Add(this.btn_item_add);
-            this.groupBox1.Location = new System.Drawing.Point(538, 32);
+            this.groupBox1.Location = new System.Drawing.Point(337, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 63);
             this.groupBox1.TabIndex = 1;
@@ -66,6 +66,7 @@
             this.btn_item_save.TabIndex = 2;
             this.btn_item_save.Text = "Save";
             this.btn_item_save.UseVisualStyleBackColor = true;
+            this.btn_item_save.Click += new System.EventHandler(this.btn_item_save_Click);
             // 
             // btn_item_del
             // 
@@ -101,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 525);
+            this.ClientSize = new System.Drawing.Size(538, 525);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid_items);
@@ -109,6 +110,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Products Management";
             this.Load += new System.EventHandler(this.ItemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_items)).EndInit();

@@ -75,6 +75,7 @@
             this.choose_month.Name = "choose_month";
             this.choose_month.Size = new System.Drawing.Size(105, 20);
             this.choose_month.TabIndex = 7;
+            this.choose_month.ValueChanged += new System.EventHandler(this.month_change);
             // 
             // SalesAmountForm
             // 
@@ -86,6 +87,7 @@
             this.Controls.Add(this.btn_amount_save);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SalesAmountForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesAmount";
             this.Load += new System.EventHandler(this.SalesAmountForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

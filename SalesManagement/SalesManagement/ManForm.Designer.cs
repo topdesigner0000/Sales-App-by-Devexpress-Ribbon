@@ -45,7 +45,7 @@
             this.grid_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_employees.Location = new System.Drawing.Point(3, 87);
             this.grid_employees.Name = "grid_employees";
-            this.grid_employees.Size = new System.Drawing.Size(734, 466);
+            this.grid_employees.Size = new System.Drawing.Size(533, 466);
             this.grid_employees.TabIndex = 0;
             // 
             // groupBox1
@@ -53,7 +53,7 @@
             this.groupBox1.Controls.Add(this.btn_man_save);
             this.groupBox1.Controls.Add(this.btn_man_delete);
             this.groupBox1.Controls.Add(this.btn_man_add);
-            this.groupBox1.Location = new System.Drawing.Point(555, 33);
+            this.groupBox1.Location = new System.Drawing.Point(354, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(182, 48);
             this.groupBox1.TabIndex = 1;
@@ -68,6 +68,7 @@
             this.btn_man_save.TabIndex = 2;
             this.btn_man_save.Text = "Save";
             this.btn_man_save.UseVisualStyleBackColor = true;
+            this.btn_man_save.Click += new System.EventHandler(this.btn_man_save_Click);
             // 
             // btn_man_delete
             // 
@@ -77,6 +78,7 @@
             this.btn_man_delete.TabIndex = 1;
             this.btn_man_delete.Text = "Delete";
             this.btn_man_delete.UseVisualStyleBackColor = true;
+            this.btn_man_delete.Click += new System.EventHandler(this.btn_man_delete_Click);
             // 
             // btn_man_add
             // 
@@ -106,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 555);
+            this.ClientSize = new System.Drawing.Size(538, 555);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid_employees);
@@ -114,6 +116,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesMan Management";
             this.Load += new System.EventHandler(this.ManForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_employees)).EndInit();

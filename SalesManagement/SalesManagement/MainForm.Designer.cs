@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonControl1.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
             this.btn_item = new DevExpress.XtraBars.BarButtonItem();
             this.btn_man = new DevExpress.XtraBars.BarButtonItem();
             this.btn_item_chart = new DevExpress.XtraBars.BarButtonItem();
@@ -61,7 +60,7 @@
             this.chk_term2 = new DevExpress.XtraEditors.CheckEdit();
             this.chk_term1 = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.month_pick = new DevExpress.XtraEditors.Controls.CalendarControl();
+            this.date_control = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
@@ -74,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chk_term3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.month_pick.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -95,6 +94,7 @@
             this.ribbonPage1,
             this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonControl1.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.Size = new System.Drawing.Size(1598, 148);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
@@ -288,7 +288,7 @@
             // 
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.month_pick);
+            this.groupControl1.Controls.Add(this.date_control);
             this.groupControl1.Location = new System.Drawing.Point(0, 148);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
@@ -365,14 +365,14 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "2018";
             // 
-            // month_pick
+            // date_control
             // 
-            this.month_pick.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.date_control.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.month_pick.Location = new System.Drawing.Point(1, 496);
-            this.month_pick.Name = "month_pick";
-            this.month_pick.Size = new System.Drawing.Size(232, 227);
-            this.month_pick.TabIndex = 0;
+            this.date_control.Location = new System.Drawing.Point(1, 496);
+            this.date_control.Name = "date_control";
+            this.date_control.Size = new System.Drawing.Size(232, 227);
+            this.date_control.TabIndex = 0;
             // 
             // defaultLookAndFeel1
             // 
@@ -394,8 +394,10 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Ribbon = this.ribbonControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "SalesManagement";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -408,7 +410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chk_term3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.month_pick.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,7 +429,7 @@
         private DevExpress.XtraGrid.GridControl grid_sales;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.Controls.CalendarControl month_pick;
+        private DevExpress.XtraEditors.Controls.CalendarControl date_control;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.CheckEdit chk_term4;
         private DevExpress.XtraEditors.CheckEdit chk_term3;

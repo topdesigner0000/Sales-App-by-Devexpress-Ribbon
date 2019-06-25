@@ -47,5 +47,10 @@ namespace SalesManagement
             SalesAmountForm amount_form = new SalesAmountForm();
             amount_form.ShowDialog();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

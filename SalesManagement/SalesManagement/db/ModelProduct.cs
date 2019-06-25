@@ -15,7 +15,7 @@ namespace SalesManagement.db
         float cost { get; set; }
         float price { get; set; }
         float weight { get; set; }
-        bool invisible { get; set; }
+        int invisible { get; set; }
     }
 
     class Product : IProduct
@@ -26,7 +26,7 @@ namespace SalesManagement.db
         private float _cost;
         private float _price;
         private float _weight;
-        private bool _invisible;
+        private int _invisible;
 
         public Product()
         {
@@ -40,7 +40,7 @@ namespace SalesManagement.db
             this.cost = cost;
             this.price = price;
             this.weight = ((price-cost) / cost) * 100.0f;
-            this.invisible = true;
+            this.invisible = 1;
         }
 
         public int id { get { return _id; } set { _id = value; } }
@@ -49,7 +49,7 @@ namespace SalesManagement.db
         public float cost { get { return _cost; } set { _cost = value; } }
         public float price { get { return _price; } set { _price = value; } }
         public float weight { get { return _weight; } set { _weight = value; } }
-        public bool invisible { get { return _invisible; } set { _invisible = value; } }
+        public int invisible { get { return _invisible; } set { _invisible = value; } }
     }
 
 
@@ -141,13 +141,22 @@ namespace SalesManagement.db
                     //. 06 - weight
                     w_item.weight = w_reader.GetFloat(5);
                     //. 07 - disable
-                    w_item.invisible = bool.Parse(w_reader.GetString(6));
+                    w_item.invisible = w_reader.GetInt32(6);
 
                     w_list.Add(w_item);
                 }
             }
 
             return w_list;
+        }
+        public bool DeleteAll()
+        {
+            string w_query = string.Format(@"DELETE FROM {0};"
+                            , m_tableName
+                        );
+
+            bool w_ret = DbAssist.executeCommand(w_query);
+            return w_ret;
         }
     }
 }

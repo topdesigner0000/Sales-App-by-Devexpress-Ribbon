@@ -25,21 +25,30 @@ namespace SalesManagement
 
         private void SalesAmountForm_Load(object sender, EventArgs e)
         {
-
-            DataTable w_dt = w_model.GetReport(2019, 6);
-            dataGridView1.DataSource = w_dt;
-
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
-            {
-                col.HeaderText = w_dt.Columns[col.HeaderText].Caption;
-            }
+            refresh();
         }
 
         private void btn_amount_save_Click(object sender, EventArgs e)
         {
             DataTable w_dt = (DataTable)dataGridView1.DataSource;
 
-            w_model.SetReport(2019, 6, w_dt);
+            w_model.SetReport(choose_month.Value.Year, choose_month.Value.Month, w_dt);
+        }
+
+        private void month_change(object sender, EventArgs e)
+        {
+            refresh();
+        }
+        private void refresh()
+        {
+            DataTable w_dt = w_model.GetReport(choose_month.Value.Year, choose_month.Value.Month);
+            dataGridView1.DataSource = w_dt;
+
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.HeaderText = w_dt.Columns[col.HeaderText].Caption;
+            }
+            dataGridView1.Columns[0].Visible = false;
         }
     }
 }

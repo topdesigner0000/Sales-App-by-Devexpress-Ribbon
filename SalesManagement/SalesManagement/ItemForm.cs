@@ -24,23 +24,21 @@ namespace SalesManagement
 
         private void ItemForm_Load(object sender, EventArgs e)
         {
-            IList<IProduct> w_list = m_model.GetItemList();
-            grid_items.Columns.Clear();
-            grid_items.DataSource = w_list;
+            refresh();
         }
 
         private void btn_item_add_Click(object sender, EventArgs e)
         {
-            //x grid_items.Rows.Add();
+            IList<IProduct> w_list = grid_items.DataSource as IList<IProduct>;
+            Product w_new = new Product("",0,0,0);
+            w_new.id = w_list.Count + 1;
+            w_new.weight = 0;
+            w_list.Add(w_new);
+            grid_items.DataSource = null;
+            grid_items.DataSource = w_list;
+            grid_items.Columns[0].Visible = false;
+            grid_items.Columns[6].Visible = false;
 
-            //*
-            m_model.AddItem(new Product("Sugar", 1, 100, 120));
-            m_model.AddItem(new Product("Bisket", 0, 50, 55));
-            m_model.AddItem(new Product("Brade", 0, 80, 100));
-            m_model.AddItem(new Product("Juce", 0, 10, 12.5f));
-            m_model.AddItem(new Product("Jerry", 0, 10, 12.5f));
-            m_model.AddItem(new Product("Kimchi", 0, 23, 32.5f));
-            //*/
         }
 
         private void btn_item_del_Click(object sender, EventArgs e)
@@ -50,7 +48,30 @@ namespace SalesManagement
             {
                 IProduct w_selProduct = (IProduct)grid_items.Rows[w_selRow].DataBoundItem;
                 m_model.DeleteItem(w_selProduct);
+                refresh();
             }
+        }
+        private void refresh()
+        {
+            IList<IProduct> w_list = m_model.GetItemList();
+            grid_items.Columns.Clear();
+            grid_items.DataSource = w_list;
+            grid_items.Columns[0].Visible = false;
+            grid_items.Columns[6].Visible = false;
+        }
+
+        private void btn_item_save_Click(object sender, EventArgs e)
+        {
+            IList<IProduct> w_list = grid_items.DataSource as IList<IProduct>;
+            if (m_model.DeleteAll())
+            {
+                foreach (Product item in w_list)
+                {
+                    m_model.AddItem(item);
+                }
+                refresh();
+            }
+            
         }
     }
 }
