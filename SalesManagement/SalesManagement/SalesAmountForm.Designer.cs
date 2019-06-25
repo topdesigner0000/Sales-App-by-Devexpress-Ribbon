@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesAmountForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_amount_save = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,17 +42,19 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 204);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1012, 380);
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.Size = new System.Drawing.Size(790, 380);
             this.dataGridView1.TabIndex = 2;
             // 
             // btn_amount_save
             // 
             this.btn_amount_save.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_amount_save.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn_amount_save.Appearance.ForeColor = System.Drawing.Color.Transparent;
             this.btn_amount_save.Appearance.Options.UseFont = true;
             this.btn_amount_save.Appearance.Options.UseForeColor = true;
             this.btn_amount_save.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_amount_save.Location = new System.Drawing.Point(12, 157);
+            this.btn_amount_save.Location = new System.Drawing.Point(705, 166);
             this.btn_amount_save.Name = "btn_amount_save";
             this.btn_amount_save.Size = new System.Drawing.Size(75, 32);
             this.btn_amount_save.TabIndex = 3;
@@ -72,7 +75,9 @@
             // 
             this.choose_month.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.choose_month.Location = new System.Drawing.Point(782, 1);
+            this.choose_month.DateTime = new System.DateTime(2019, 6, 25, 0, 0, 0, 0);
+            this.choose_month.EditValue = new System.DateTime(2019, 6, 25, 0, 0, 0, 0);
+            this.choose_month.Location = new System.Drawing.Point(1, 1);
             this.choose_month.Name = "choose_month";
             this.choose_month.ShowFooter = false;
             this.choose_month.ShowTodayButton = false;
@@ -85,11 +90,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 584);
+            this.ClientSize = new System.Drawing.Size(792, 584);
             this.Controls.Add(this.choose_month);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_amount_save);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SalesAmountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesAmount";

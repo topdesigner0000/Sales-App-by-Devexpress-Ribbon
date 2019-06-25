@@ -221,6 +221,7 @@
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.GridControl = this.grid_sales;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl1
@@ -316,8 +317,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_control.Location = new System.Drawing.Point(1, 496);
             this.date_control.Name = "date_control";
-            this.date_control.Size = new System.Drawing.Size(232, 227);
+            this.date_control.Size = new System.Drawing.Size(244, 227);
             this.date_control.TabIndex = 0;
+            this.date_control.SelectionChanged += new System.EventHandler(this.date_control_SelectionChanged);
             // 
             // defaultLookAndFeel1
             // 

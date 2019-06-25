@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SalesManagement
 {
-    public partial class ItemForm : Form
+    public partial class ItemForm : DevExpress.XtraEditors.XtraForm
     {
         ModelProduct m_model;
 
@@ -30,7 +30,7 @@ namespace SalesManagement
         private void btn_item_add_Click(object sender, EventArgs e)
         {
             IList<IProduct> w_list = grid_items.DataSource as IList<IProduct>;
-            Product w_new = new Product("",0,0,0);
+            Product w_new = new Product("","",0,0);
             w_new.id = w_list.Count + 1;
             w_new.weight = 0;
             w_list.Add(w_new);
@@ -38,17 +38,29 @@ namespace SalesManagement
             grid_items.DataSource = w_list;
             grid_items.Columns[0].Visible = false;
             grid_items.Columns[6].Visible = false;
-
+            grid_items.CurrentCell = grid_items.Rows[grid_items.Rows.Count - 1].Cells[1];
+            grid_items.BeginEdit(true);
         }
 
         private void btn_item_del_Click(object sender, EventArgs e)
         {
-            int w_selRow = grid_items.CurrentCell.RowIndex;
-            if (w_selRow != -1)
+            string message = "Do you want to delete this product?";
+            string title = "Remove product";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
             {
-                IProduct w_selProduct = (IProduct)grid_items.Rows[w_selRow].DataBoundItem;
-                m_model.DeleteItem(w_selProduct);
-                refresh();
+                int w_selRow = grid_items.CurrentCell.RowIndex;
+                if (w_selRow != -1)
+                {
+                    IProduct w_selProduct = (IProduct)grid_items.Rows[w_selRow].DataBoundItem;
+                    m_model.DeleteItem(w_selProduct);
+                    refresh();
+                }
+            }
+            else
+            {
+
             }
         }
         private void refresh()

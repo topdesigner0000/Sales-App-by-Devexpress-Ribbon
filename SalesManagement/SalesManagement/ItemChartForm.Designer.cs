@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView4 = new DevExpress.XtraCharts.Pie3DSeriesView();
+            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView1 = new DevExpress.XtraCharts.Pie3DSeriesView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemChartForm));
             this.list_item = new DevExpress.XtraEditors.ListBoxControl();
             this.ctl_calendar = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -38,7 +39,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.item_chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView1)).BeginInit();
             this.SuspendLayout();
             // 
             // list_item
@@ -54,9 +55,11 @@
             // 
             this.ctl_calendar.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ctl_calendar.DateTime = new System.DateTime(2019, 6, 25, 0, 0, 0, 0);
+            this.ctl_calendar.EditValue = new System.DateTime(2019, 6, 25, 0, 0, 0, 0);
             this.ctl_calendar.Location = new System.Drawing.Point(0, 347);
             this.ctl_calendar.Name = "ctl_calendar";
-            this.ctl_calendar.Size = new System.Drawing.Size(232, 227);
+            this.ctl_calendar.Size = new System.Drawing.Size(244, 227);
             this.ctl_calendar.TabIndex = 2;
             this.ctl_calendar.SelectionChanged += new System.EventHandler(this.ctl_calendar_SelectionChanged);
             // 
@@ -78,7 +81,7 @@
             this.item_chart.Location = new System.Drawing.Point(233, 2);
             this.item_chart.Name = "item_chart";
             this.item_chart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.item_chart.SeriesTemplate.View = pie3DSeriesView4;
+            this.item_chart.SeriesTemplate.View = pie3DSeriesView1;
             this.item_chart.Size = new System.Drawing.Size(543, 572);
             this.item_chart.TabIndex = 3;
             // 
@@ -89,6 +92,7 @@
             this.ClientSize = new System.Drawing.Size(793, 591);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemChartForm";
@@ -100,7 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.item_chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView6 = new DevExpress.XtraCharts.Pie3DSeriesView();
+            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView1 = new DevExpress.XtraCharts.Pie3DSeriesView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManChartForm));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.man_chart = new DevExpress.XtraCharts.ChartControl();
             this.ctl_man_calendar = new DevExpress.XtraEditors.Controls.CalendarControl();
@@ -36,7 +37,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.man_chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctl_man_calendar.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_man)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             this.man_chart.Location = new System.Drawing.Point(233, 2);
             this.man_chart.Name = "man_chart";
             this.man_chart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.man_chart.SeriesTemplate.View = pie3DSeriesView6;
+            this.man_chart.SeriesTemplate.View = pie3DSeriesView1;
             this.man_chart.Size = new System.Drawing.Size(543, 572);
             this.man_chart.TabIndex = 3;
             // 
@@ -67,9 +68,11 @@
             // 
             this.ctl_man_calendar.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ctl_man_calendar.DateTime = new System.DateTime(2019, 6, 25, 0, 0, 0, 0);
+            this.ctl_man_calendar.EditValue = new System.DateTime(2019, 6, 25, 0, 0, 0, 0);
             this.ctl_man_calendar.Location = new System.Drawing.Point(1, 347);
             this.ctl_man_calendar.Name = "ctl_man_calendar";
-            this.ctl_man_calendar.Size = new System.Drawing.Size(232, 227);
+            this.ctl_man_calendar.Size = new System.Drawing.Size(244, 227);
             this.ctl_man_calendar.TabIndex = 2;
             this.ctl_man_calendar.SelectionChanged += new System.EventHandler(this.ctl_man_calendar_SelectionChanged);
             // 
@@ -89,6 +92,7 @@
             this.ClientSize = new System.Drawing.Size(783, 580);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManChartForm";
@@ -98,7 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.man_chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctl_man_calendar.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_man)).EndInit();

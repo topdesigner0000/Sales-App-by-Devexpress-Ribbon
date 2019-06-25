@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManForm));
             this.grid_employees = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_man_save = new System.Windows.Forms.Button();
@@ -45,6 +46,8 @@
             this.grid_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_employees.Location = new System.Drawing.Point(3, 87);
             this.grid_employees.Name = "grid_employees";
+            this.grid_employees.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grid_employees.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.grid_employees.Size = new System.Drawing.Size(533, 466);
             this.grid_employees.TabIndex = 0;
             // 
@@ -62,6 +65,7 @@
             // 
             // btn_man_save
             // 
+            this.btn_man_save.ForeColor = System.Drawing.Color.Black;
             this.btn_man_save.Location = new System.Drawing.Point(124, 16);
             this.btn_man_save.Name = "btn_man_save";
             this.btn_man_save.Size = new System.Drawing.Size(56, 23);
@@ -72,6 +76,7 @@
             // 
             // btn_man_delete
             // 
+            this.btn_man_delete.ForeColor = System.Drawing.Color.Black;
             this.btn_man_delete.Location = new System.Drawing.Point(62, 16);
             this.btn_man_delete.Name = "btn_man_delete";
             this.btn_man_delete.Size = new System.Drawing.Size(56, 23);
@@ -82,6 +87,7 @@
             // 
             // btn_man_add
             // 
+            this.btn_man_add.ForeColor = System.Drawing.Color.Black;
             this.btn_man_add.Location = new System.Drawing.Point(0, 16);
             this.btn_man_add.Name = "btn_man_add";
             this.btn_man_add.Size = new System.Drawing.Size(56, 23);
@@ -113,6 +119,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid_employees);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManForm";

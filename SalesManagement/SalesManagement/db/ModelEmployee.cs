@@ -13,7 +13,7 @@ namespace SalesManagement.db
         string f_name { get; set; }
         string g_name { get; set; }
         string email { get; set; }
-        int code { get; set; }
+        string code { get; set; }
         int team { get; set; }
         int invisible { get; set; }
     }
@@ -24,7 +24,7 @@ namespace SalesManagement.db
         private string _f_name;
         private string _g_name;
         private string _email;
-        private int _code;
+        private string _code;
         private int _team;
         private int _invisible;
 
@@ -33,7 +33,7 @@ namespace SalesManagement.db
 
         }
 
-        public Employee(string first_name, string given_name, string email, int code, int team)
+        public Employee(string first_name, string given_name, string email, string code, int team)
         {
             this.f_name = first_name;
             this.g_name = given_name;
@@ -47,7 +47,7 @@ namespace SalesManagement.db
         public string f_name { get { return _f_name; } set { _f_name = value; } }
         public string g_name { get { return _g_name; } set { _g_name = value; } }
         public string email { get { return _email; } set { _email = value; } }
-        public int code { get { return _code; } set { _code = value; } }
+        public string code { get { return _code; } set { _code = value; } }
         public int team { get { return _team; } set { _team = value; } }
         public int invisible { get { return _invisible; } set { _invisible = value; } }
     }
@@ -73,7 +73,7 @@ namespace SalesManagement.db
                                         , newEmployee.f_name
                                         , newEmployee.g_name
                                         , newEmployee.email
-                                        , newEmployee.code
+                                        , newEmployee.code == "full time" ? 1 : 0
                                         , newEmployee.team
                                         , newEmployee.invisible
                                     );
@@ -90,7 +90,7 @@ namespace SalesManagement.db
                                         , udEmployee.f_name
                                         , udEmployee.g_name
                                         , udEmployee.email
-                                        , udEmployee.code
+                                        , udEmployee.code == "full time" ? 1 : 0
                                         , udEmployee.team
                                         , udEmployee.invisible
                                         , udEmployee.id
@@ -137,7 +137,7 @@ namespace SalesManagement.db
                     //. 04 - email
                     w_item.email = w_reader.GetString(3);
                     //. 05 - code
-                    w_item.code = w_reader.GetInt32(4);
+                    w_item.code = w_reader.GetInt32(4) == 1 ? "full time" : "part time";
                     //. 06 - team
                     w_item.team = w_reader.GetInt32(5);
                     //. 07 - invisible

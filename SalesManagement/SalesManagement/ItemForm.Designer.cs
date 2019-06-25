@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemForm));
             this.grid_items = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_item_save = new System.Windows.Forms.Button();
-            this.btn_item_del = new System.Windows.Forms.Button();
-            this.btn_item_add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_item_add = new System.Windows.Forms.Button();
+            this.btn_item_del = new System.Windows.Forms.Button();
+            this.btn_item_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid_items)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -43,8 +46,24 @@
             this.grid_items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_items.Location = new System.Drawing.Point(4, 101);
             this.grid_items.Name = "grid_items";
+            this.grid_items.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grid_items.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.grid_items.Size = new System.Drawing.Size(533, 422);
             this.grid_items.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(74, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 32);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Products";
+            // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Dark";
             // 
             // groupBox1
             // 
@@ -58,28 +77,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Function";
             // 
-            // btn_item_save
-            // 
-            this.btn_item_save.Location = new System.Drawing.Point(135, 21);
-            this.btn_item_save.Name = "btn_item_save";
-            this.btn_item_save.Size = new System.Drawing.Size(57, 23);
-            this.btn_item_save.TabIndex = 2;
-            this.btn_item_save.Text = "Save";
-            this.btn_item_save.UseVisualStyleBackColor = true;
-            this.btn_item_save.Click += new System.EventHandler(this.btn_item_save_Click);
-            // 
-            // btn_item_del
-            // 
-            this.btn_item_del.Location = new System.Drawing.Point(72, 21);
-            this.btn_item_del.Name = "btn_item_del";
-            this.btn_item_del.Size = new System.Drawing.Size(57, 23);
-            this.btn_item_del.TabIndex = 1;
-            this.btn_item_del.Text = "Delete";
-            this.btn_item_del.UseVisualStyleBackColor = true;
-            this.btn_item_del.Click += new System.EventHandler(this.btn_item_del_Click);
-            // 
             // btn_item_add
             // 
+            this.btn_item_add.ForeColor = System.Drawing.Color.Black;
             this.btn_item_add.Location = new System.Drawing.Point(6, 21);
             this.btn_item_add.Name = "btn_item_add";
             this.btn_item_add.Size = new System.Drawing.Size(57, 23);
@@ -88,15 +88,27 @@
             this.btn_item_add.UseVisualStyleBackColor = true;
             this.btn_item_add.Click += new System.EventHandler(this.btn_item_add_Click);
             // 
-            // label1
+            // btn_item_del
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 32);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Products";
+            this.btn_item_del.ForeColor = System.Drawing.Color.Black;
+            this.btn_item_del.Location = new System.Drawing.Point(72, 21);
+            this.btn_item_del.Name = "btn_item_del";
+            this.btn_item_del.Size = new System.Drawing.Size(57, 23);
+            this.btn_item_del.TabIndex = 1;
+            this.btn_item_del.Text = "Delete";
+            this.btn_item_del.UseVisualStyleBackColor = true;
+            this.btn_item_del.Click += new System.EventHandler(this.btn_item_del_Click);
+            // 
+            // btn_item_save
+            // 
+            this.btn_item_save.ForeColor = System.Drawing.Color.Black;
+            this.btn_item_save.Location = new System.Drawing.Point(135, 21);
+            this.btn_item_save.Name = "btn_item_save";
+            this.btn_item_save.Size = new System.Drawing.Size(57, 23);
+            this.btn_item_save.TabIndex = 2;
+            this.btn_item_save.Text = "Save";
+            this.btn_item_save.UseVisualStyleBackColor = true;
+            this.btn_item_save.Click += new System.EventHandler(this.btn_item_save_Click);
             // 
             // ItemForm
             // 
@@ -107,6 +119,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid_items);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemForm";
@@ -123,10 +136,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grid_items;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_item_save;
         private System.Windows.Forms.Button btn_item_del;
         private System.Windows.Forms.Button btn_item_add;
-        private System.Windows.Forms.Label label1;
     }
 }

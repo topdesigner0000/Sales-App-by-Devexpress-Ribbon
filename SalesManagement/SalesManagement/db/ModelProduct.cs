@@ -11,7 +11,7 @@ namespace SalesManagement.db
     {
         int id { get; set; }
         string name { get; set; }
-        int type { get; set; }
+        string type { get; set; }
         float cost { get; set; }
         float price { get; set; }
         float weight { get; set; }
@@ -22,7 +22,7 @@ namespace SalesManagement.db
     {
         private int _id;
         private string _name;
-        private int _type;
+        private string _type;
         private float _cost;
         private float _price;
         private float _weight;
@@ -33,7 +33,7 @@ namespace SalesManagement.db
 
         }
 
-        public Product(string name, int type, float cost, float price)
+        public Product(string name, string type, float cost, float price)
         {
             this.name = name;
             this.type = type;
@@ -45,7 +45,7 @@ namespace SalesManagement.db
 
         public int id { get { return _id; } set { _id = value; } }
         public string name { get { return _name; } set { _name = value; } }
-        public int type { get { return _type; } set { _type = value; } }
+        public string type { get { return _type; } set { _type = value; } }
         public float cost { get { return _cost; } set { _cost = value; } }
         public float price { get { return _price; } set { _price = value; } }
         public float weight { get { return _weight; } set { _weight = value; } }
@@ -71,7 +71,7 @@ namespace SalesManagement.db
             string w_query = string.Format(@"INSERT INTO {0} (name, type, cost, price, weight, invisible) VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}')"
                                         , m_tableName
                                         , newItem.name
-                                        , newItem.type
+                                        , newItem.type == "Group" ? 1 : 0
                                         , newItem.cost
                                         , newItem.price
                                         , newItem.weight
@@ -88,7 +88,7 @@ namespace SalesManagement.db
             string w_query = string.Format(@"UPDATE {0} SET name='{1}', type='{2}', cost='{3}', price='{4}', weight='{5}', invisible='{6}' WHERE id='{7}';"
                                         , m_tableName
                                         , udProduct.name
-                                        , udProduct.type
+                                        , udProduct.type == "Group" ? 1 : 0
                                         , udProduct.cost
                                         , udProduct.price
                                         , udProduct.weight
@@ -133,7 +133,7 @@ namespace SalesManagement.db
                     //. 02 - name
                     w_item.name = w_reader.GetString(1);
                     //. 03 - type
-                    w_item.type = w_reader.GetInt32(2);
+                    w_item.type = w_reader.GetInt32(2) == 1 ? "Group" : "Individual";
                     //. 04 - cost
                     w_item.cost = w_reader.GetFloat(3);
                     //. 05 - price

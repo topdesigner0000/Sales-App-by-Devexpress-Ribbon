@@ -11,7 +11,7 @@ using SalesManagement.db;
 
 namespace SalesManagement
 {
-    public partial class SalesAmountForm : Form
+    public partial class SalesAmountForm : DevExpress.XtraEditors.XtraForm
     {
         ModelReport w_model;
         

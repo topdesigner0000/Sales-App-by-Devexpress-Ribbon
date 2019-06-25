@@ -130,5 +130,10 @@ namespace SalesManagement
             grid_sales.DataSource = null;
             grid_sales.DataSource = w_dt;
         }
+
+        private void date_control_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

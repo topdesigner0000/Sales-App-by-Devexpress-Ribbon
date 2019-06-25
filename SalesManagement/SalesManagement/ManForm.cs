@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace SalesManagement
 {
-    public partial class ManForm : Form
+    public partial class ManForm : DevExpress.XtraEditors.XtraForm
     {
         ModelEmployee m_model;
+        int save_flag = 0;
 
         public ManForm()
         {
@@ -31,13 +32,15 @@ namespace SalesManagement
         private void btn_man_add_Click(object sender, EventArgs e)
         {
             IList<IEmployee> w_list = grid_employees.DataSource as IList<IEmployee>;
-            Employee w_new = new Employee("", "", "", 0, 0);
+            Employee w_new = new Employee("", "", "", "", 0);
             w_new.id = w_list.Count + 1;
             w_list.Add(w_new);
             grid_employees.DataSource = null;
             grid_employees.DataSource = w_list;
             grid_employees.Columns[0].Visible = false;
             grid_employees.Columns[6].Visible = false;
+            grid_employees.CurrentCell = grid_employees.Rows[grid_employees.Rows.Count - 1].Cells[1];
+            grid_employees.BeginEdit(true);
         }
         private void refresh()
         {
@@ -50,14 +53,26 @@ namespace SalesManagement
 
         private void btn_man_delete_Click(object sender, EventArgs e)
         {
-
-            int w_selRow = grid_employees.CurrentCell.RowIndex;
-            if (w_selRow != -1)
+            string message = "Do you want to delete this man?";
+            string title = "Remove salesman";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
             {
-                IEmployee w_selEmployee = (IEmployee)grid_employees.Rows[w_selRow].DataBoundItem;
-                m_model.DeleteItem(w_selEmployee);
-                refresh();
+                this.Close();
+                int w_selRow = grid_employees.CurrentCell.RowIndex;
+                if (w_selRow != -1)
+                {
+                    IEmployee w_selEmployee = (IEmployee)grid_employees.Rows[w_selRow].DataBoundItem;
+                    m_model.DeleteItem(w_selEmployee);
+                    refresh();
+                }
             }
+            else
+            {
+                // Do something  
+            }
+            
         }
 
         private void btn_man_save_Click(object sender, EventArgs e)
