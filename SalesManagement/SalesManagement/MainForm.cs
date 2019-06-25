@@ -114,6 +114,19 @@ namespace SalesManagement
             }
 
             DataTable w_dt = m_modelReport.GetReportPerMonth(w_sel_year, w_quartes);
+
+            DataColumn w_col = w_dt.Columns.Add("Total", typeof(Int32));
+            
+            
+            foreach(DataRow w_row in w_dt.Rows)
+            {
+                int total = 0;
+                for(int i=2;i<=w_dt.Columns.Count-2;i++)
+                {
+                    total += (int)w_row[i];
+                }
+                w_row[w_dt.Columns.Count - 1] = total;
+            }
             grid_sales.DataSource = null;
             grid_sales.DataSource = w_dt;
         }

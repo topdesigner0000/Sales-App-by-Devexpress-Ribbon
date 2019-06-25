@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView4 = new DevExpress.XtraCharts.Pie3DSeriesView();
+            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView6 = new DevExpress.XtraCharts.Pie3DSeriesView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.man_chart = new DevExpress.XtraCharts.ChartControl();
             this.ctl_man_calendar = new DevExpress.XtraEditors.Controls.CalendarControl();
@@ -36,7 +36,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.man_chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctl_man_calendar.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_man)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.man_chart.Location = new System.Drawing.Point(233, 2);
             this.man_chart.Name = "man_chart";
             this.man_chart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.man_chart.SeriesTemplate.View = pie3DSeriesView4;
+            this.man_chart.SeriesTemplate.View = pie3DSeriesView6;
             this.man_chart.Size = new System.Drawing.Size(543, 572);
             this.man_chart.TabIndex = 3;
             // 
@@ -92,12 +92,13 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManChartForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChartView-SalesMan";
             this.Load += new System.EventHandler(this.ManChartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.man_chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctl_man_calendar.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_man)).EndInit();

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView2 = new DevExpress.XtraCharts.Pie3DSeriesView();
+            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView4 = new DevExpress.XtraCharts.Pie3DSeriesView();
             this.list_item = new DevExpress.XtraEditors.ListBoxControl();
             this.ctl_calendar = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -38,7 +38,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.item_chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView4)).BeginInit();
             this.SuspendLayout();
             // 
             // list_item
@@ -78,7 +78,7 @@
             this.item_chart.Location = new System.Drawing.Point(233, 2);
             this.item_chart.Name = "item_chart";
             this.item_chart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.item_chart.SeriesTemplate.View = pie3DSeriesView2;
+            this.item_chart.SeriesTemplate.View = pie3DSeriesView4;
             this.item_chart.Size = new System.Drawing.Size(543, 572);
             this.item_chart.TabIndex = 3;
             // 
@@ -92,6 +92,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemChartForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChartView-Product";
             this.Load += new System.EventHandler(this.ItemChartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_item)).EndInit();
@@ -99,7 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.item_chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
