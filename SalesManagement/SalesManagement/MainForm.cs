@@ -133,7 +133,58 @@ namespace SalesManagement
 
         private void date_control_SelectionChanged(object sender, EventArgs e)
         {
+            int w_sel_year = date_control.SelectedRanges.Start.Year;
 
+            List<int> w_quartes = new List<int>();
+            if (chk_term1.Checked)
+            {
+                w_quartes.Add(1);
+                w_quartes.Add(2);
+                w_quartes.Add(3);
+            }
+
+            if (chk_term2.Checked)
+            {
+                w_quartes.Add(4);
+                w_quartes.Add(5);
+                w_quartes.Add(6);
+            }
+
+            if (chk_term3.Checked)
+            {
+                w_quartes.Add(7);
+                w_quartes.Add(8);
+                w_quartes.Add(9);
+            }
+
+            if (chk_term4.Checked)
+            {
+                w_quartes.Add(10);
+                w_quartes.Add(11);
+                w_quartes.Add(12);
+            }
+
+            if (w_quartes.Count == 0)
+            {
+                w_quartes.Add(date_control.SelectedRanges.Start.Month);
+            }
+
+            DataTable w_dt = m_modelReport.GetReportPerMonth(w_sel_year, w_quartes);
+
+            DataColumn w_col = w_dt.Columns.Add("Total", typeof(Int32));
+
+
+            foreach (DataRow w_row in w_dt.Rows)
+            {
+                int total = 0;
+                for (int i = 2; i <= w_dt.Columns.Count - 2; i++)
+                {
+                    total += (int)w_row[i];
+                }
+                w_row[w_dt.Columns.Count - 1] = total;
+            }
+            grid_sales.DataSource = null;
+            grid_sales.DataSource = w_dt;
         }
     }
 }
