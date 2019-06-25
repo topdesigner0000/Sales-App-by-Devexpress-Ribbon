@@ -41,7 +41,9 @@ namespace SalesManagement
         }
         private void refresh()
         {
-            DataTable w_dt = w_model.GetReport(choose_month.Value.Year, choose_month.Value.Month);
+            List<int> w_selMonth = new List<int>();
+            w_selMonth.Add(choose_month.Value.Month);
+            DataTable w_dt = w_model.GetReportPerMonth(choose_month.Value.Year, w_selMonth);
             dataGridView1.DataSource = w_dt;
 
             foreach (DataGridViewColumn col in dataGridView1.Columns)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalesManagement.db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,25 @@ namespace SalesManagement
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        ModelReport m_modelReport;
+
         public MainForm()
         {
             InitializeComponent();
+
+            m_modelReport = new ModelReport();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            DateRange w_range = m_modelReport.GetReportDateRange();
+            cmbReportYear.Items.Clear();
+            for (int i = w_range.m_begin_year; i <= w_range.m_end_year; i++)
+            {
+                cmbReportYear.Items.Add(i);
+            }
+            cmbReportYear.SelectedIndex = (cmbReportYear.Items.Count - 1);
+
         }
 
         private void btn_item_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,9 +65,56 @@ namespace SalesManagement
             amount_form.ShowDialog();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void cmbReportYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            RefreshReportTable();
+        }
+
+        private void chk_term_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshReportTable();
+        }
+
+        private void RefreshReportTable()
+        {
+            int w_sel_year = (int)cmbReportYear.Items[cmbReportYear.SelectedIndex];
+
+            List<int> w_quartes = new List<int>();
+            if ( chk_term1.Checked)
+            {
+                w_quartes.Add(1);
+                w_quartes.Add(2);
+                w_quartes.Add(3);
+            }
+
+            if (chk_term2.Checked)
+            {
+                w_quartes.Add(4);
+                w_quartes.Add(5);
+                w_quartes.Add(6);
+            }
+
+            if (chk_term3.Checked)
+            {
+                w_quartes.Add(7);
+                w_quartes.Add(8);
+                w_quartes.Add(9);
+            }
+
+            if (chk_term4.Checked)
+            {
+                w_quartes.Add(10);
+                w_quartes.Add(11);
+                w_quartes.Add(12);
+            }
+
+            if (w_quartes.Count == 0)
+            {
+                w_quartes.Add(DateTime.Today.Month);
+            }
+
+            DataTable w_dt = m_modelReport.GetReportPerMonth(w_sel_year, w_quartes);
+            grid_sales.DataSource = w_dt;
         }
     }
 }

@@ -53,6 +53,14 @@ namespace SalesManagement.db
         public int amount { get { return _amount; } set { _amount = value; } }
     }
 
+    public struct DateRange
+    {
+        public int m_begin_year;
+        public int m_begin_month;
+        public int m_end_year;
+        public int m_end_month;
+    }
+
 
     class ModelReport
     {
@@ -130,16 +138,37 @@ namespace SalesManagement.db
             return w_ret;
         }
 
-
-        protected IList<IReport> GetItemList(int year, int mounth)
+        protected IList<IReport> GetItemList(int year, List<int> months)
         {
+            string w_query = "";
             IList<IReport> w_list = new List<IReport>();
 
-            string w_query = string.Format(@"SELECT * FROM {0} WHERE year='{1}' AND month = '{2}';"
-                , m_tableName
-                , year
-                , mounth
-            );
+            if (months.Count == 1)
+            {
+                w_query = string.Format(@"SELECT * FROM {0} WHERE year='{1}' AND month='{2}';"
+                    , m_tableName
+                    , year
+                    , months[0]
+                );
+            }
+            else if (months.Count > 1)
+            {
+                string w_monthList = "";
+                foreach (int month in months)
+                {
+                    w_monthList += string.Format("{0}, ", month);
+                }
+                w_monthList = w_monthList.Substring(0, w_monthList.Length - 2);
+                w_query = string.Format(@"SELECT id, year, month, day, employee, product, sum(amount) as amount 
+                                            FROM {0} 
+                                            WHERE year = '{1}' AND month IN ('{2}') 
+                                            GROUP BY employee, product 
+                                            ORDER BY employee, product;"
+                                    , m_tableName
+                                    , year
+                                    , w_monthList
+                                );
+            }
 
             SQLiteDataReader w_reader = DbAssist.executeQuery(w_query);
             if (w_reader != null)
@@ -183,7 +212,7 @@ namespace SalesManagement.db
             return w_count;
         }
 
-        public DataTable GetReport(int year, int month)
+        public DataTable GetReportPerMonth(int year, List<int> months)
         {
             DataTable w_table = new DataTable();
 
@@ -207,7 +236,7 @@ namespace SalesManagement.db
             //. Rows.
             ModelEmployee w_employees = new ModelEmployee();
             IList<IEmployee> w_manList = w_employees.GetItemList();
-            IList<IReport> w_salesList = this.GetItemList(year, month);
+            IList<IReport> w_salesList = this.GetItemList(year, months);
 
             foreach (IEmployee w_empItem in w_manList)
             {
@@ -265,6 +294,40 @@ namespace SalesManagement.db
             }
 
             return true;
+        }
+
+        public DateRange GetReportDateRange()
+        {
+            DateTime w_today = DateTime.Today;
+            int w_min_year = w_today.Year;
+            int w_min_month = w_today.Month;
+            int w_max_year = w_today.Year;
+            int w_max_month = w_today.Month;            
+
+            string w_query = "SELECT MIN(year || '-' || month) AS min, MAX(year || '-' || month) AS max FROM tbl_report";
+            SQLiteDataReader w_reader = DbAssist.executeQuery(w_query);
+            if (w_reader != null)
+            {
+                w_reader.Read();
+                string w_min = w_reader.GetString(0);
+                string w_max = w_reader.GetString(1);
+
+                string[] w_mins = w_min.Split('-');
+                w_min_year = int.Parse(w_mins[0]);
+                w_min_month = int.Parse(w_mins[1]);
+
+                string[] w_maxs = w_max.Split('-');
+                w_max_year = int.Parse(w_maxs[0]);
+                w_max_month = int.Parse(w_maxs[1]);
+            }
+
+            DateRange w_range = new DateRange();
+            w_range.m_begin_year = w_min_year;
+            w_range.m_begin_month = w_min_month;
+            w_range.m_end_year = w_max_year;
+            w_range.m_end_month = w_max_month;
+
+            return w_range;
         }
     }
 }

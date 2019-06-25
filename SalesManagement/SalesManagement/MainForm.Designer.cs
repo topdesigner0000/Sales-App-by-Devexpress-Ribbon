@@ -54,12 +54,12 @@
             this.field_itemd3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.field_item4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cmbReportYear = new System.Windows.Forms.ComboBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.chk_term4 = new DevExpress.XtraEditors.CheckEdit();
             this.chk_term3 = new DevExpress.XtraEditors.CheckEdit();
             this.chk_term2 = new DevExpress.XtraEditors.CheckEdit();
             this.chk_term1 = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.date_control = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -216,7 +216,7 @@
             this.grid_sales.MainView = this.gridView1;
             this.grid_sales.MenuManager = this.ribbonControl1;
             this.grid_sales.Name = "grid_sales";
-            this.grid_sales.Size = new System.Drawing.Size(1378, 725);
+            this.grid_sales.Size = new System.Drawing.Size(1365, 725);
             this.grid_sales.TabIndex = 2;
             this.grid_sales.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -286,14 +286,26 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.cmbReportYear);
             this.groupControl1.Controls.Add(this.groupControl2);
-            this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.date_control);
             this.groupControl1.Location = new System.Drawing.Point(0, 148);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
             this.groupControl1.Size = new System.Drawing.Size(233, 724);
             this.groupControl1.TabIndex = 3;
+            // 
+            // cmbReportYear
+            // 
+            this.cmbReportYear.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbReportYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReportYear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cmbReportYear.FormattingEnabled = true;
+            this.cmbReportYear.Location = new System.Drawing.Point(29, 30);
+            this.cmbReportYear.Name = "cmbReportYear";
+            this.cmbReportYear.Size = new System.Drawing.Size(184, 30);
+            this.cmbReportYear.TabIndex = 3;
+            this.cmbReportYear.SelectedIndexChanged += new System.EventHandler(this.cmbReportYear_SelectedIndexChanged);
             // 
             // groupControl2
             // 
@@ -321,6 +333,7 @@
             this.chk_term4.Properties.Caption = "Term4";
             this.chk_term4.Size = new System.Drawing.Size(75, 23);
             this.chk_term4.TabIndex = 3;
+            this.chk_term4.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
             // 
             // chk_term3
             // 
@@ -332,6 +345,7 @@
             this.chk_term3.Properties.Caption = "Term3";
             this.chk_term3.Size = new System.Drawing.Size(75, 23);
             this.chk_term3.TabIndex = 2;
+            this.chk_term3.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
             // 
             // chk_term2
             // 
@@ -343,6 +357,7 @@
             this.chk_term2.Properties.Caption = "Term2";
             this.chk_term2.Size = new System.Drawing.Size(75, 23);
             this.chk_term2.TabIndex = 1;
+            this.chk_term2.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
             // 
             // chk_term1
             // 
@@ -354,16 +369,7 @@
             this.chk_term1.Properties.Caption = "Term1";
             this.chk_term1.Size = new System.Drawing.Size(75, 23);
             this.chk_term1.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(31, 16);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(44, 24);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "2018";
+            this.chk_term1.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
             // 
             // date_control
             // 
@@ -447,8 +453,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn field_itemd3;
         private DevExpress.XtraGrid.Columns.GridColumn field_item4;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private System.Windows.Forms.ComboBox cmbReportYear;
     }
 }
