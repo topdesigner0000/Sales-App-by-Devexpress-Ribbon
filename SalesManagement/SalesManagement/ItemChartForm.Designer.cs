@@ -44,10 +44,12 @@
             // 
             // list_item
             // 
+            this.list_item.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_item.Appearance.Options.UseFont = true;
             this.list_item.Cursor = System.Windows.Forms.Cursors.Default;
             this.list_item.Location = new System.Drawing.Point(0, 0);
             this.list_item.Name = "list_item";
-            this.list_item.Size = new System.Drawing.Size(232, 348);
+            this.list_item.Size = new System.Drawing.Size(233, 348);
             this.list_item.TabIndex = 0;
             this.list_item.SelectedIndexChanged += new System.EventHandler(this.list_item_SelectedIndexChanged);
             // 
@@ -72,7 +74,7 @@
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(779, 577);
+            this.groupControl1.Size = new System.Drawing.Size(783, 577);
             this.groupControl1.TabIndex = 0;
             // 
             // item_chart
@@ -82,7 +84,7 @@
             this.item_chart.Name = "item_chart";
             this.item_chart.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
             this.item_chart.SeriesTemplate.View = pie3DSeriesView1;
-            this.item_chart.Size = new System.Drawing.Size(543, 572);
+            this.item_chart.Size = new System.Drawing.Size(547, 572);
             this.item_chart.TabIndex = 3;
             // 
             // ItemChartForm

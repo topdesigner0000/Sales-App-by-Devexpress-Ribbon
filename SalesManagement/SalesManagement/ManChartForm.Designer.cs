@@ -78,6 +78,8 @@
             // 
             // list_man
             // 
+            this.list_man.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_man.Appearance.Options.UseFont = true;
             this.list_man.Cursor = System.Windows.Forms.Cursors.Default;
             this.list_man.Location = new System.Drawing.Point(1, 0);
             this.list_man.Name = "list_man";

@@ -90,7 +90,7 @@
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(1598, 148);
+            this.ribbonControl1.Size = new System.Drawing.Size(1598, 152);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btn_item
@@ -98,8 +98,12 @@
             this.btn_item.Caption = "Products";
             this.btn_item.Id = 1;
             this.btn_item.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_item.ImageOptions.Image")));
+            this.btn_item.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_item.ItemAppearance.Hovered.Options.UseFont = true;
             this.btn_item.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_item.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_item.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_item.ItemAppearance.Pressed.Options.UseFont = true;
             this.btn_item.Name = "btn_item";
             this.btn_item.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_item_ItemClick);
             // 
@@ -108,8 +112,12 @@
             this.btn_man.Caption = "SalesMen";
             this.btn_man.Id = 2;
             this.btn_man.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_man.ImageOptions.Image")));
+            this.btn_man.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_man.ItemAppearance.Hovered.Options.UseFont = true;
             this.btn_man.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_man.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_man.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_man.ItemAppearance.Pressed.Options.UseFont = true;
             this.btn_man.Name = "btn_man";
             this.btn_man.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_man_ItemClick);
             // 
@@ -118,8 +126,12 @@
             this.btn_item_chart.Caption = "per Item";
             this.btn_item_chart.Id = 3;
             this.btn_item_chart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_item_chart.ImageOptions.Image")));
+            this.btn_item_chart.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_item_chart.ItemAppearance.Hovered.Options.UseFont = true;
             this.btn_item_chart.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_item_chart.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_item_chart.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_item_chart.ItemAppearance.Pressed.Options.UseFont = true;
             this.btn_item_chart.Name = "btn_item_chart";
             this.btn_item_chart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_item_chart_ItemClick);
             // 
@@ -128,8 +140,12 @@
             this.btn_man_chart.Caption = "per Man";
             this.btn_man_chart.Id = 4;
             this.btn_man_chart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_man_chart.ImageOptions.Image")));
+            this.btn_man_chart.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_man_chart.ItemAppearance.Hovered.Options.UseFont = true;
             this.btn_man_chart.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_man_chart.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_man_chart.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_man_chart.ItemAppearance.Pressed.Options.UseFont = true;
             this.btn_man_chart.Name = "btn_man_chart";
             this.btn_man_chart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_man_chart_ItemClick);
             // 
@@ -138,14 +154,18 @@
             this.barButtonItem1.Caption = "SalesAmount";
             this.barButtonItem1.Id = 5;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemAppearance.Hovered.Options.UseFont = true;
             this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem1.ItemAppearance.Pressed.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem1.ItemAppearance.Pressed.Options.UseFont = true;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // ribbonPage1
             // 
-            this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonPage1.Appearance.Options.UseFont = true;
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
@@ -174,6 +194,8 @@
             // 
             // ribbonPage3
             // 
+            this.ribbonPage3.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage3.Appearance.Options.UseFont = true;
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
             this.ribbonPageGroup4});
@@ -206,11 +228,11 @@
             // 
             // grid_sales
             // 
-            this.grid_sales.Location = new System.Drawing.Point(233, 147);
+            this.grid_sales.Location = new System.Drawing.Point(233, 154);
             this.grid_sales.MainView = this.gridView1;
             this.grid_sales.MenuManager = this.ribbonControl1;
             this.grid_sales.Name = "grid_sales";
-            this.grid_sales.Size = new System.Drawing.Size(1365, 725);
+            this.grid_sales.Size = new System.Drawing.Size(1365, 723);
             this.grid_sales.TabIndex = 2;
             this.grid_sales.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -229,10 +251,10 @@
             this.groupControl1.Controls.Add(this.cmbReportYear);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.date_control);
-            this.groupControl1.Location = new System.Drawing.Point(0, 148);
+            this.groupControl1.Location = new System.Drawing.Point(0, 154);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(233, 724);
+            this.groupControl1.Size = new System.Drawing.Size(233, 723);
             this.groupControl1.TabIndex = 3;
             // 
             // cmbReportYear

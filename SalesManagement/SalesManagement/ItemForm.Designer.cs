@@ -70,12 +70,12 @@
             this.groupBox1.Controls.Add(this.btn_item_save);
             this.groupBox1.Controls.Add(this.btn_item_del);
             this.groupBox1.Controls.Add(this.btn_item_add);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.Location = new System.Drawing.Point(337, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 63);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Function";
             // 
             // btn_item_add
             // 
