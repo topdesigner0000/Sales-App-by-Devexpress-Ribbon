@@ -32,18 +32,15 @@ namespace SalesManagement
         {
             DataTable w_dt = (DataTable)dataGridView1.DataSource;
 
-            w_model.SetReport(choose_month.Value.Year, choose_month.Value.Month, w_dt);
+            w_model.SetReport(choose_month.SelectedRanges.Start.Year, choose_month.SelectedRanges.Start.Month, w_dt);
         }
 
-        private void month_change(object sender, EventArgs e)
-        {
-            refresh();
-        }
         private void refresh()
         {
             List<int> w_selMonth = new List<int>();
-            w_selMonth.Add(choose_month.Value.Month);
-            DataTable w_dt = w_model.GetReportPerMonth(choose_month.Value.Year, w_selMonth);
+            w_selMonth.Add(choose_month.SelectedRanges.Start.Month);
+            DataTable w_dt = w_model.GetReportPerMonth(choose_month.SelectedRanges.Start.Year, w_selMonth);
+            dataGridView1.DataSource = null;
             dataGridView1.DataSource = w_dt;
 
             foreach (DataGridViewColumn col in dataGridView1.Columns)
@@ -51,6 +48,12 @@ namespace SalesManagement
                 col.HeaderText = w_dt.Columns[col.HeaderText].Caption;
             }
             dataGridView1.Columns[0].Visible = false;
+        }
+
+        
+        private void choose_month_ValueChanged(object sender, EventArgs e)
+        {
+            refresh();
         }
     }
 }

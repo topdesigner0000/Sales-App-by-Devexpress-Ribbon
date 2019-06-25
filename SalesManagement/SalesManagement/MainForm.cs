@@ -114,6 +114,7 @@ namespace SalesManagement
             }
 
             DataTable w_dt = m_modelReport.GetReportPerMonth(w_sel_year, w_quartes);
+            grid_sales.DataSource = null;
             grid_sales.DataSource = w_dt;
         }
     }

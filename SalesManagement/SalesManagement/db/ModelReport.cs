@@ -156,12 +156,12 @@ namespace SalesManagement.db
                 string w_monthList = "";
                 foreach (int month in months)
                 {
-                    w_monthList += string.Format("{0}, ", month);
+                    w_monthList += string.Format("'{0}', ", month);
                 }
                 w_monthList = w_monthList.Substring(0, w_monthList.Length - 2);
                 w_query = string.Format(@"SELECT id, year, month, day, employee, product, sum(amount) as amount 
                                             FROM {0} 
-                                            WHERE year = '{1}' AND month IN ('{2}') 
+                                            WHERE year = '{1}' AND month IN ({2}) 
                                             GROUP BY employee, product 
                                             ORDER BY employee, product;"
                                     , m_tableName
@@ -328,6 +328,107 @@ namespace SalesManagement.db
             w_range.m_end_month = w_max_month;
 
             return w_range;
+        }
+
+        ///////*******************///////
+        public DataTable GetReportPerItem(int year, List<int> months, int item_id)
+        {
+            DataTable w_table = new DataTable();
+
+            //. Columns
+            
+            DataColumn w_col = w_table.Columns.Add("id", typeof(Int32));
+            w_col.AllowDBNull = false;
+            w_col.Unique = true;
+
+            w_col = w_table.Columns.Add("Employee", typeof(string));
+            w_col.AllowDBNull = false;
+            w_col.Unique = true;
+
+            w_col = w_table.Columns.Add("Amount", typeof(string));
+            w_col.AllowDBNull = false;
+            
+
+            
+            //. Rows.
+            ModelEmployee w_employees = new ModelEmployee();
+            IList<IEmployee> w_manList = w_employees.GetItemList();
+            IList<IReport> w_salesList = this.GetItemList(year, months);
+
+            foreach (IEmployee w_empItem in w_manList)
+            {
+                DataRow w_row = w_table.NewRow();
+                foreach (DataColumn w_col1 in w_table.Columns)
+                {
+                    if (w_col1.Ordinal == 0)
+                    {
+                        w_row[0] = w_empItem.id;
+                        continue;
+                    }
+
+                    if (w_col1.Ordinal == 1)
+                    {
+                        w_row[1] = w_empItem.f_name + "." + w_empItem.g_name;
+                        continue;
+                    }
+                    int w_amount = GetSalesCount(w_salesList, w_empItem.id, item_id);
+                    w_row[w_col1.Ordinal] = w_amount;
+                }
+
+                w_table.Rows.Add(w_row);
+            }
+
+            return w_table;
+        }
+
+        public DataTable GetReportPerMan(int year, List<int> months, int man_id)
+        {
+            DataTable w_table = new DataTable();
+
+            //. Columns
+
+            DataColumn w_col = w_table.Columns.Add("id", typeof(Int32));
+            w_col.AllowDBNull = false;
+            w_col.Unique = true;
+
+            w_col = w_table.Columns.Add("Item", typeof(string));
+            w_col.AllowDBNull = false;
+            w_col.Unique = true;
+
+            w_col = w_table.Columns.Add("Amount", typeof(string));
+            w_col.AllowDBNull = false;
+
+
+
+            //. Rows.
+            ModelProduct w_employees = new ModelProduct();
+            IList<IProduct> w_itemList = w_employees.GetItemList();
+            IList<IReport> w_salesList = this.GetItemList(year, months);
+
+            foreach (IProduct w_empItem in w_itemList)
+            {
+                DataRow w_row = w_table.NewRow();
+                foreach (DataColumn w_col1 in w_table.Columns)
+                {
+                    if (w_col1.Ordinal == 0)
+                    {
+                        w_row[0] = w_empItem.id;
+                        continue;
+                    }
+
+                    if (w_col1.Ordinal == 1)
+                    {
+                        w_row[1] = w_empItem.name;
+                        continue;
+                    }
+                    int w_amount = GetSalesCount(w_salesList, man_id, w_empItem.id );
+                    w_row[w_col1.Ordinal] = w_amount;
+                }
+
+                w_table.Rows.Add(w_row);
+            }
+
+            return w_table;
         }
     }
 }

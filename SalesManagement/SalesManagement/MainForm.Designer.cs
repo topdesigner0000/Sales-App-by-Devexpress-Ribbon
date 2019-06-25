@@ -47,12 +47,6 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.grid_sales = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.field_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.field_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.field_item1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.field_item2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.field_itemd3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.field_item4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cmbReportYear = new System.Windows.Forms.ComboBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -225,64 +219,9 @@
             // 
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.field_ID,
-            this.field_name,
-            this.field_item1,
-            this.field_item2,
-            this.field_itemd3,
-            this.field_item4});
             this.gridView1.GridControl = this.grid_sales;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // field_ID
-            // 
-            this.field_ID.Caption = "ID";
-            this.field_ID.Name = "field_ID";
-            this.field_ID.Visible = true;
-            this.field_ID.VisibleIndex = 0;
-            this.field_ID.Width = 31;
-            // 
-            // field_name
-            // 
-            this.field_name.Caption = "Name";
-            this.field_name.Name = "field_name";
-            this.field_name.Visible = true;
-            this.field_name.VisibleIndex = 1;
-            this.field_name.Width = 108;
-            // 
-            // field_item1
-            // 
-            this.field_item1.Caption = "Item1";
-            this.field_item1.Name = "field_item1";
-            this.field_item1.Visible = true;
-            this.field_item1.VisibleIndex = 2;
-            this.field_item1.Width = 138;
-            // 
-            // field_item2
-            // 
-            this.field_item2.Caption = "Item2";
-            this.field_item2.Name = "field_item2";
-            this.field_item2.Visible = true;
-            this.field_item2.VisibleIndex = 3;
-            this.field_item2.Width = 141;
-            // 
-            // field_itemd3
-            // 
-            this.field_itemd3.Caption = "Item3";
-            this.field_itemd3.Name = "field_itemd3";
-            this.field_itemd3.Visible = true;
-            this.field_itemd3.VisibleIndex = 4;
-            this.field_itemd3.Width = 139;
-            // 
-            // field_item4
-            // 
-            this.field_item4.Caption = "Item4";
-            this.field_item4.Name = "field_item4";
-            this.field_item4.Visible = true;
-            this.field_item4.VisibleIndex = 5;
-            this.field_item4.Width = 135;
             // 
             // groupControl1
             // 
@@ -441,17 +380,11 @@
         private DevExpress.XtraEditors.CheckEdit chk_term3;
         private DevExpress.XtraEditors.CheckEdit chk_term2;
         private DevExpress.XtraEditors.CheckEdit chk_term1;
-        private DevExpress.XtraGrid.Columns.GridColumn field_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn field_name;
-        private DevExpress.XtraGrid.Columns.GridColumn field_item1;
-        private DevExpress.XtraGrid.Columns.GridColumn field_item2;
         private DevExpress.XtraBars.BarButtonItem btn_item_chart;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btn_man_chart;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraGrid.Columns.GridColumn field_itemd3;
-        private DevExpress.XtraGrid.Columns.GridColumn field_item4;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
