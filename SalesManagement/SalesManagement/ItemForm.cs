@@ -31,7 +31,7 @@ namespace SalesManagement
         {
             IList<IProduct> w_list = grid_items.DataSource as IList<IProduct>;
             Product w_new = new Product("","",0,0);
-            w_new.id = w_list.Count + 1;
+            w_new.id = w_list[w_list.Count - 1].id + 1;
             w_new.weight = 0;
             w_list.Add(w_new);
             grid_items.DataSource = null;

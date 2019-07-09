@@ -39,12 +39,15 @@ namespace SalesManagement
         {
             ItemForm item_form = new ItemForm();
             item_form.ShowDialog();
+            refresh();
+            
         }
 
         private void btn_man_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ManForm man_form = new ManForm();
             man_form.ShowDialog();
+            refresh();
         }
 
         private void btn_item_chart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -63,6 +66,7 @@ namespace SalesManagement
         {
             SalesAmountForm amount_form = new SalesAmountForm();
             amount_form.ShowDialog();
+            refresh();
         }
 
         private void cmbReportYear_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,7 +76,7 @@ namespace SalesManagement
 
         private void chk_term_CheckedChanged(object sender, EventArgs e)
         {
-            RefreshReportTable();
+            refresh();
         }
 
         private void RefreshReportTable()
@@ -133,6 +137,10 @@ namespace SalesManagement
 
         private void date_control_SelectionChanged(object sender, EventArgs e)
         {
+            refresh();
+        }
+        private void refresh()
+        {
             int w_sel_year = date_control.SelectedRanges.Start.Year;
 
             List<int> w_quartes = new List<int>();
@@ -169,8 +177,8 @@ namespace SalesManagement
                 w_quartes.Add(date_control.SelectedRanges.Start.Month);
             }
 
-            DataTable w_dt = m_modelReport.GetReportPerMonth(w_sel_year, w_quartes);
-
+            DataTable w_dt = new DataTable();
+            w_dt = m_modelReport.GetReportPerMonth(w_sel_year, w_quartes);
             DataColumn w_col = w_dt.Columns.Add("Total", typeof(Int32));
 
 
@@ -185,6 +193,7 @@ namespace SalesManagement
             }
             grid_sales.DataSource = null;
             grid_sales.DataSource = w_dt;
+            grid_sales.MainView.PopulateColumns();
         }
     }
 }

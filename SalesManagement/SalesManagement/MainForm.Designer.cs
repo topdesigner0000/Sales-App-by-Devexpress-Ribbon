@@ -45,8 +45,6 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.grid_sales = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cmbReportYear = new System.Windows.Forms.ComboBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -56,9 +54,9 @@
             this.chk_term1 = new DevExpress.XtraEditors.CheckEdit();
             this.date_control = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grid_sales = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -68,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -226,26 +226,6 @@
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // grid_sales
-            // 
-            this.grid_sales.Location = new System.Drawing.Point(233, 154);
-            this.grid_sales.MainView = this.gridView1;
-            this.grid_sales.MenuManager = this.ribbonControl1;
-            this.grid_sales.Name = "grid_sales";
-            this.grid_sales.Size = new System.Drawing.Size(1365, 723);
-            this.grid_sales.TabIndex = 2;
-            this.grid_sales.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.GridControl = this.grid_sales;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.cmbReportYear);
@@ -339,13 +319,33 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_control.Location = new System.Drawing.Point(1, 496);
             this.date_control.Name = "date_control";
-            this.date_control.Size = new System.Drawing.Size(244, 227);
+            this.date_control.Size = new System.Drawing.Size(232, 227);
             this.date_control.TabIndex = 0;
             this.date_control.SelectionChanged += new System.EventHandler(this.date_control_SelectionChanged);
             // 
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Dark";
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.GridControl = this.grid_sales;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // grid_sales
+            // 
+            this.grid_sales.Location = new System.Drawing.Point(233, 154);
+            this.grid_sales.MainView = this.gridView1;
+            this.grid_sales.MenuManager = this.ribbonControl1;
+            this.grid_sales.Name = "grid_sales";
+            this.grid_sales.Size = new System.Drawing.Size(1365, 723);
+            this.grid_sales.TabIndex = 2;
+            this.grid_sales.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
             // MainForm
             // 
@@ -368,8 +368,6 @@
             this.Text = "SalesManagement";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -380,6 +378,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,8 +395,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.BarButtonItem btn_item;
         private DevExpress.XtraBars.BarButtonItem btn_man;
-        private DevExpress.XtraGrid.GridControl grid_sales;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.Controls.CalendarControl date_control;
         private DevExpress.XtraEditors.GroupControl groupControl2;
@@ -413,5 +411,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private System.Windows.Forms.ComboBox cmbReportYear;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl grid_sales;
     }
 }

@@ -72,7 +72,7 @@
             this.ctl_man_calendar.EditValue = new System.DateTime(2019, 6, 25, 0, 0, 0, 0);
             this.ctl_man_calendar.Location = new System.Drawing.Point(1, 347);
             this.ctl_man_calendar.Name = "ctl_man_calendar";
-            this.ctl_man_calendar.Size = new System.Drawing.Size(244, 227);
+            this.ctl_man_calendar.Size = new System.Drawing.Size(232, 227);
             this.ctl_man_calendar.TabIndex = 2;
             this.ctl_man_calendar.SelectionChanged += new System.EventHandler(this.ctl_man_calendar_SelectionChanged);
             // 

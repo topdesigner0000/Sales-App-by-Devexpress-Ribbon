@@ -68,8 +68,9 @@ namespace SalesManagement.db
         public bool AddItem(IProduct newItem)
         {
             bool w_ret = false;
-            string w_query = string.Format(@"INSERT INTO {0} (name, type, cost, price, weight, invisible) VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}')"
+            string w_query = string.Format(@"INSERT INTO {0} (id, name, type, cost, price, weight, invisible) VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')"
                                         , m_tableName
+                                        , newItem.id
                                         , newItem.name
                                         , newItem.type == "Group" ? 1 : 0
                                         , newItem.cost

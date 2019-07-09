@@ -59,7 +59,7 @@ namespace SalesManagement
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                
                 int w_selRow = grid_employees.CurrentCell.RowIndex;
                 if (w_selRow != -1)
                 {
@@ -70,7 +70,7 @@ namespace SalesManagement
             }
             else
             {
-                // Do something  
+                
             }
             
         }
