@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Term1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Term2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Term3");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Term4");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("2019", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btn_item = new DevExpress.XtraBars.BarButtonItem();
             this.btn_man = new DevExpress.XtraBars.BarButtonItem();
@@ -46,12 +55,7 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.cmbReportYear = new System.Windows.Forms.ComboBox();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.chk_term4 = new DevExpress.XtraEditors.CheckEdit();
-            this.chk_term3 = new DevExpress.XtraEditors.CheckEdit();
-            this.chk_term2 = new DevExpress.XtraEditors.CheckEdit();
-            this.chk_term1 = new DevExpress.XtraEditors.CheckEdit();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.date_control = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -59,12 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
@@ -228,8 +226,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.cmbReportYear);
-            this.groupControl1.Controls.Add(this.groupControl2);
+            this.groupControl1.Controls.Add(this.treeView1);
             this.groupControl1.Controls.Add(this.date_control);
             this.groupControl1.Location = new System.Drawing.Point(0, 154);
             this.groupControl1.Name = "groupControl1";
@@ -237,81 +234,30 @@
             this.groupControl1.Size = new System.Drawing.Size(233, 723);
             this.groupControl1.TabIndex = 3;
             // 
-            // cmbReportYear
+            // treeView1
             // 
-            this.cmbReportYear.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cmbReportYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbReportYear.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.cmbReportYear.FormattingEnabled = true;
-            this.cmbReportYear.Location = new System.Drawing.Point(29, 30);
-            this.cmbReportYear.Name = "cmbReportYear";
-            this.cmbReportYear.Size = new System.Drawing.Size(184, 30);
-            this.cmbReportYear.TabIndex = 3;
-            this.cmbReportYear.SelectedIndexChanged += new System.EventHandler(this.cmbReportYear_SelectedIndexChanged);
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl2.Appearance.Options.UseFont = true;
-            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.Controls.Add(this.chk_term4);
-            this.groupControl2.Controls.Add(this.chk_term3);
-            this.groupControl2.Controls.Add(this.chk_term2);
-            this.groupControl2.Controls.Add(this.chk_term1);
-            this.groupControl2.Location = new System.Drawing.Point(28, 79);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(200, 300);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "Term";
-            // 
-            // chk_term4
-            // 
-            this.chk_term4.Location = new System.Drawing.Point(47, 197);
-            this.chk_term4.MenuManager = this.ribbonControl1;
-            this.chk_term4.Name = "chk_term4";
-            this.chk_term4.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_term4.Properties.Appearance.Options.UseFont = true;
-            this.chk_term4.Properties.Caption = "Term4";
-            this.chk_term4.Size = new System.Drawing.Size(75, 23);
-            this.chk_term4.TabIndex = 3;
-            this.chk_term4.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
-            // 
-            // chk_term3
-            // 
-            this.chk_term3.Location = new System.Drawing.Point(47, 149);
-            this.chk_term3.MenuManager = this.ribbonControl1;
-            this.chk_term3.Name = "chk_term3";
-            this.chk_term3.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_term3.Properties.Appearance.Options.UseFont = true;
-            this.chk_term3.Properties.Caption = "Term3";
-            this.chk_term3.Size = new System.Drawing.Size(75, 23);
-            this.chk_term3.TabIndex = 2;
-            this.chk_term3.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
-            // 
-            // chk_term2
-            // 
-            this.chk_term2.Location = new System.Drawing.Point(47, 100);
-            this.chk_term2.MenuManager = this.ribbonControl1;
-            this.chk_term2.Name = "chk_term2";
-            this.chk_term2.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_term2.Properties.Appearance.Options.UseFont = true;
-            this.chk_term2.Properties.Caption = "Term2";
-            this.chk_term2.Size = new System.Drawing.Size(75, 23);
-            this.chk_term2.TabIndex = 1;
-            this.chk_term2.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
-            // 
-            // chk_term1
-            // 
-            this.chk_term1.Location = new System.Drawing.Point(47, 57);
-            this.chk_term1.MenuManager = this.ribbonControl1;
-            this.chk_term1.Name = "chk_term1";
-            this.chk_term1.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_term1.Properties.Appearance.Options.UseFont = true;
-            this.chk_term1.Properties.Caption = "Term1";
-            this.chk_term1.Size = new System.Drawing.Size(75, 23);
-            this.chk_term1.TabIndex = 0;
-            this.chk_term1.CheckedChanged += new System.EventHandler(this.chk_term_CheckedChanged);
+            this.treeView1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.treeView1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.treeView1.LabelEdit = true;
+            this.treeView1.LineColor = System.Drawing.Color.WhiteSmoke;
+            this.treeView1.Location = new System.Drawing.Point(5, 59);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Term1";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "Term2";
+            treeNode3.Name = "Node3";
+            treeNode3.Text = "Term3";
+            treeNode4.Name = "Node4";
+            treeNode4.Text = "Term4";
+            treeNode5.Name = "Node0";
+            treeNode5.Text = "2019";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            this.treeView1.Size = new System.Drawing.Size(222, 278);
+            this.treeView1.TabIndex = 1;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // date_control
             // 
@@ -319,7 +265,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_control.Location = new System.Drawing.Point(1, 496);
             this.date_control.Name = "date_control";
-            this.date_control.Size = new System.Drawing.Size(232, 227);
+            this.date_control.Size = new System.Drawing.Size(240, 227);
             this.date_control.TabIndex = 0;
             this.date_control.SelectionChanged += new System.EventHandler(this.date_control_SelectionChanged);
             // 
@@ -371,12 +317,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_term1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).EndInit();
@@ -397,11 +337,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_man;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.Controls.CalendarControl date_control;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.CheckEdit chk_term4;
-        private DevExpress.XtraEditors.CheckEdit chk_term3;
-        private DevExpress.XtraEditors.CheckEdit chk_term2;
-        private DevExpress.XtraEditors.CheckEdit chk_term1;
         private DevExpress.XtraBars.BarButtonItem btn_item_chart;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
@@ -410,8 +345,8 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private System.Windows.Forms.ComboBox cmbReportYear;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl grid_sales;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
