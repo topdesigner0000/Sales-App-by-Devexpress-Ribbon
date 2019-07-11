@@ -121,6 +121,7 @@
     <Compile Include="ManForm.Designer.cs">
       <DependentUpon>ManForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewTab.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesAmountForm.cs">

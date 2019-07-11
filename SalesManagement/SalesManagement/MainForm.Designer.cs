@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Term1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Term2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Term3");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Term4");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("2019", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Term1");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Term2");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Term3");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Term4");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("2019", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btn_item = new DevExpress.XtraBars.BarButtonItem();
             this.btn_man = new DevExpress.XtraBars.BarButtonItem();
@@ -58,14 +58,14 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.date_control = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grid_sales = new DevExpress.XtraGrid.GridControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tab_amount = new DevExpress.XtraTab.XtraTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab_amount)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -243,21 +243,21 @@
             this.treeView1.LineColor = System.Drawing.Color.WhiteSmoke;
             this.treeView1.Location = new System.Drawing.Point(5, 59);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Term1";
-            treeNode2.Name = "Node2";
-            treeNode2.Text = "Term2";
-            treeNode3.Name = "Node3";
-            treeNode3.Text = "Term3";
-            treeNode4.Name = "Node4";
-            treeNode4.Text = "Term4";
-            treeNode5.Name = "Node0";
-            treeNode5.Text = "2019";
+            treeNode6.Name = "Node1";
+            treeNode6.Text = "Term1";
+            treeNode7.Name = "Node2";
+            treeNode7.Text = "Term2";
+            treeNode8.Name = "Node3";
+            treeNode8.Text = "Term3";
+            treeNode9.Name = "Node4";
+            treeNode9.Text = "Term4";
+            treeNode10.Name = "Node0";
+            treeNode10.Text = "2019";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            treeNode10});
             this.treeView1.Size = new System.Drawing.Size(222, 278);
             this.treeView1.TabIndex = 1;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
             // date_control
             // 
@@ -265,7 +265,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_control.Location = new System.Drawing.Point(1, 496);
             this.date_control.Name = "date_control";
-            this.date_control.Size = new System.Drawing.Size(240, 227);
+            this.date_control.Size = new System.Drawing.Size(232, 227);
             this.date_control.TabIndex = 0;
             this.date_control.SelectionChanged += new System.EventHandler(this.date_control_SelectionChanged);
             // 
@@ -273,25 +273,31 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Dark";
             // 
-            // gridView1
+            // panel1
             // 
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.GridControl = this.grid_sales;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.panel1.Controls.Add(this.tab_amount);
+            this.panel1.Location = new System.Drawing.Point(233, 154);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1365, 718);
+            this.panel1.TabIndex = 9;
             // 
-            // grid_sales
+            // tab_amount
             // 
-            this.grid_sales.Location = new System.Drawing.Point(233, 154);
-            this.grid_sales.MainView = this.gridView1;
-            this.grid_sales.MenuManager = this.ribbonControl1;
-            this.grid_sales.Name = "grid_sales";
-            this.grid_sales.Size = new System.Drawing.Size(1365, 723);
-            this.grid_sales.TabIndex = 2;
-            this.grid_sales.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.tab_amount.AppearancePage.Header.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tab_amount.AppearancePage.Header.ForeColor = System.Drawing.Color.Black;
+            this.tab_amount.AppearancePage.Header.Options.UseBackColor = true;
+            this.tab_amount.AppearancePage.Header.Options.UseForeColor = true;
+            this.tab_amount.AppearancePage.HeaderActive.BackColor = System.Drawing.Color.Black;
+            this.tab_amount.AppearancePage.HeaderActive.ForeColor = System.Drawing.Color.White;
+            this.tab_amount.AppearancePage.HeaderActive.Options.UseBackColor = true;
+            this.tab_amount.AppearancePage.HeaderActive.Options.UseForeColor = true;
+            this.tab_amount.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
+            this.tab_amount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab_amount.Location = new System.Drawing.Point(0, 0);
+            this.tab_amount.Name = "tab_amount";
+            this.tab_amount.Size = new System.Drawing.Size(1365, 718);
+            this.tab_amount.TabIndex = 0;
+            this.tab_amount.CloseButtonClick += new System.EventHandler(this.tab_amount_CloseButtonClick);
             // 
             // MainForm
             // 
@@ -299,8 +305,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1598, 899);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.grid_sales);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
@@ -318,8 +324,8 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.date_control.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_sales)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tab_amount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,8 +351,8 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.GridControl grid_sales;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraTab.XtraTabControl tab_amount;
     }
 }
