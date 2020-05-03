@@ -6,4 +6,6 @@ This uses:
   -Devexpress Ribbon Tab
   -Modern Graph Function
   
-![alt text](https://github.com/topdesigner0000/Sales-App-by-Devexpress-Ribbon/edit/master/mainPage.png?raw=true)
+![Screenshot](mainPage.png)
+![Screenshot](product.png)
+![Screenshot](graph.png)
